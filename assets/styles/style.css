@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Oi&display=swap");
+body {
+  background: #fff;
+}
+
+.title-wrapper {
+  position: relative;
+}
+
+h1 {
+  font-family: "Oi", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 72pt;
+  color: #86bde6;
+}
+
+#bubbleOne, #bubbleTwo, #bubbleThree, #bubbleFour, #bubbleFive,
+#bubbleSix, #bubbleSeven, #bubbleEight, #bubbleNine, #bubbleTen,
+#bubbleEleven, #bubbleTwelve, #bubbleThirteen, #bubbleFourteen, #bubbleFifteen {
+  position: absolute;
+}
+
+#bubbleOne {
+  width: 50px;
+  top: 110px;
+  left: 100px;
+}
+
+#bubbleTwo {
+  width: 30px;
+  top: 115px;
+  left: 10px;
+  animation-duration: 8s !important;
+}
+
+#bubbleThree {
+  width: 20px;
+  top: 125px;
+  left: 35px;
+  animation-duration: 9s !important;
+}
+
+#bubbleFour {
+  width: 65px;
+  top: 98px;
+  left: 175px;
+  animation-duration: 7s !important;
+}
+
+#bubbleFive {
+  width: 45px;
+  top: 105px;
+  left: 256px;
+  animation-duration: 3s !important;
+}
+
+#bubbleSix {
+  width: 50px;
+  top: 105px;
+  left: 320px;
+  animation-duration: 8s !important;
+}
+
+#bubbleSeven {
+  width: 35px;
+  top: 125px;
+  left: 436px;
+  animation-duration: 10s !important;
+}
+
+#bubbleEight {
+  width: 50px;
+  top: 105px;
+  left: 530px;
+  animation-duration: 4s !important;
+}
+
+#bubbleNine {
+  width: 40px;
+  top: 105px;
+  left: 600px;
+  animation-duration: 8s !important;
+}
+
+#bubbleTen {
+  width: 60px;
+  top: 105px;
+  left: 680px;
+}
+
+#bubbleEleven {
+  width: 70px;
+  top: 100px;
+  left: 770px;
+  animation-duration: 4s !important;
+}
+
+#bubbleTwelve {
+  width: 70px;
+  top: 100px;
+  left: 900px;
+  animation-duration: 9s !important;
+}
+
+#bubbleThirteen {
+  width: 48px;
+  top: 110px;
+  left: 1030px;
+}
+
+#bubbleFourteen {
+  width: 20px;
+  top: 120px;
+  left: 960px;
+  animation-duration: 4s !important;
+}
+
+#bubbleFifteen {
+  width: 35px;
+  top: 120px;
+  left: 860px;
+  animation-duration: 3s !important;
+}
+
+.bubbles {
+  animation: bubbly 5s ease-in-out infinite;
+}
+
+@keyframes bubbly {
+  100% {
+    transform: translateY(-130px);
+  }
+}/*# sourceMappingURL=style.css.map */
