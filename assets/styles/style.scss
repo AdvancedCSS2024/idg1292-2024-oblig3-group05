@@ -1,22 +1,96 @@
+body, h1 {
+    margin: 0;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+}
+
+
+// underwater grad for sect. 3-4
+.underwater-gradient {
+    background: #104861;
+    background: -webkit-linear-gradient(0deg, #104861 0%, #557583 50%, #81a1a3 100%);
+    background: linear-gradient(0deg, #104861 0%, #557583 50%, #81a1a3 100%);
+}
+
+
+.section--1, .section--2, .section--3, .section--4 {
+    height: 70vw;
+    border: solid red;
+    position: relative;
+    
+}
+
+// Section 1
 .section--1 {
-    background-color: aqua;
-    height: 1000px;
+    background: #d3e3e5;
+    background: -webkit-linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
+    background: linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
 }
 
-.section--2 {
-    background-color: green;
-    height: 1000px;
-
+.background {
+    // background: #d3e3e5;
+    // background: -webkit-linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
+    // background: linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
+    position: absolute;
+    bottom: 0;
 }
 
-.section--3 {
-    background-color: hotpink;
-    height: 1000px;
+.island {
+    border-radius: 100% 0% 100% 0% / 100% 100% 0% 54% ;
+    color: orange;
+    width: 100px;
+ }
+// End of Section 1
 
-}
 
+// Section 2 
+
+
+
+// End of Section 2 
+
+
+// Section 3 
+
+
+
+// End of Section 3 
+
+// Section 4 
 .section--4 {
-    background-color: blue;
-    height: 1000px;
-
+    // background: #3a4ca0;
+    // background: -webkit-linear-gradient(0deg, #3a4ca0 0%, #53b8e6 100%);
+    // background: linear-gradient(0deg, #3a4ca0 0%, #53b8e6 100%);
 }
+
+.ocean--floor {
+    position: absolute;
+    bottom: 0;
+}
+
+.corals {
+    display: flex;
+    
+    &--right, &--left {
+        bottom: 5vw;
+        width: 20vw  ;
+        position: absolute;
+    }
+
+    &--right {
+        right: 0px;
+    }
+    
+    &--left {
+        left: 0px;
+    }
+}
+// End of Section 4 
+
