@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	})
 
 	const appearOptions = {
-		threshold: 1,
+		threshold: 0.5,
 		rootMargin: "0px"
 	  };
 	  
@@ -50,4 +50,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	  faders.forEach(fader => {
 		appearOnScroll.observe(fader);
 	  });
+	  
 });

@@ -45,12 +45,21 @@ body, h1 {
 .island {
     border-radius: 100% 0% 100% 0% / 100% 100% 0% 54% ;
     color: orange;
-    width: 100px;
+    width: 100vw;
+    height: 100vw;
+    border-radius: 100% 0% 0% 25% / 70% 25% 25% 0%;
+    z-index: 1;
+    position: absolute;
  }
 // End of Section 1
 
 
 // Section 2 
+
+.wave-nasty {
+    position: absolute;
+    bottom: 0;
+}
 
 
 
