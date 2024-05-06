@@ -47,6 +47,21 @@ body, h1 {
   bottom: 0;
 }
 
+@keyframes swim-diagonally {
+  0% {
+    transform: translatex(90vw) translatey(80vw);
+  }
+  100% {
+    transform: translatex(50vw) translatey(30vw);
+  }
+}
+.big-fish {
+  width: 10vw;
+  animation: swim-diagonally 9s forwards;
+  transform: rotate(90deg);
+  border: 2px solid;
+}
+
 .ocean--floor {
   position: absolute;
   bottom: 0;
