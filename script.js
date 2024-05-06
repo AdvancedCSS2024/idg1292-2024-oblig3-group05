@@ -1,7 +1,7 @@
 // DOMContentLoaded for å passe på at dom loader før js.
-document.addEventListener('DOMContentLoaded', function() {
-	
-    const sections = document.querySelectorAll("section")
+document.addEventListener('DOMContentLoaded', function () {
+
+	const sections = document.querySelectorAll("section")
 	const faders = document.querySelectorAll(".fade-in");
 
 	const options = {
@@ -10,18 +10,18 @@ document.addEventListener('DOMContentLoaded', function() {
 		rootMargin: "10px"
 	};
 
-    const observer = new IntersectionObserver(function
-	(entries, observer) {
-        entries.forEach(entry => {
+	const observer = new IntersectionObserver(function
+		(entries, observer) {
+		entries.forEach(entry => {
 
-			if(entry.isIntersecting){
+			if (entry.isIntersecting) {
 				console.log(entry.target);
 				entry.target.classList.add("inverse");
-			}else{
+			} else {
 				entry.target.classList.remove("inverse");
 			}
-        });
-    }, options);
+		});
+	}, options);
 
 	sections.forEach(section => {
 		observer.observe(section);
@@ -30,25 +30,24 @@ document.addEventListener('DOMContentLoaded', function() {
 	const appearOptions = {
 		threshold: 0.5,
 		rootMargin: "0px"
-	  };
-	  
-	  const appearOnScroll = new IntersectionObserver(function(
+	};
+
+	const appearOnScroll = new IntersectionObserver(function (
 		entries,
 		appearOnScroll
-	  ) {
+	) {
 		entries.forEach(entry => {
-		  if (!entry.isIntersecting) {
-			return;
-		  } else {
-			entry.target.classList.add("appear");
-			appearOnScroll.unobserve(entry.target);
-		  }
+			if (!entry.isIntersecting) {
+				return;
+			} else {
+				entry.target.classList.add("appear");
+				appearOnScroll.unobserve(entry.target);
+			}
 		});
-	  },
-	  appearOptions);
-	  
-	  faders.forEach(fader => {
+	},
+		appearOptions);
+
+	faders.forEach(fader => {
 		appearOnScroll.observe(fader);
-	  });
-	  
+	});
 });

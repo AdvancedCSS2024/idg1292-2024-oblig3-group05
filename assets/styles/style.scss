@@ -20,11 +20,18 @@ p {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+
+// UN goal img
 .goal {
-    position: sticky;
-    opacity: 0.75;
-    width: 10vw;
+    position: fixed;
+    opacity: 0.70;
+    width: 8vw;
+    right: 2%;
+    top: 2%;
+    z-index: 2;
 }
+
+// section fade-in animation
 
 .fade-in {
     opacity: 0;
@@ -37,7 +44,6 @@ p {
 // end of General
 
 // commons
-
 .section--1, .section--2, .section--3, .section--4 {
     height: 100vw;
     position: relative;
@@ -53,21 +59,25 @@ p {
     background: linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
 }
 
-.island {
 
- }
 // End of Section 1
-
 
 // Section 2
 .section--2 {
+    display: flex;
+    
+    &--wave--nasty {
+        position: absolute;
+        bottom: 0%;
+        z-index: -1;    
+    }
 
-}
-
-.wave-nasty {
-    position: absolute;
-    bottom: 0%;
-    z-index: -1;    
+    &--wave--nice {
+        position: absolute;
+        bottom: 0%;
+        z-index: -1;
+        display:none;
+    }
 }
 
 @keyframes swim-diagonally {
@@ -79,19 +89,37 @@ p {
      }
  }
 
-.fish--big {
-  width: 10vw;
-  animation: swim-diagonally 9s forwards;
+.fish, .fish--dead {
+    width: 10vw;
 }
 
-.fish--small {
-    width: 8vw;
+.question-mark {
+    top: 50vw;
+    font-size: 2rem;
+    font-weight: bold;
+    rig 
+}
+
+.fish, .fish--small, .question-mark {
+    animation: swim-diagonally 9s forwards infinite;
     position: absolute;
-    animation: swim-diagonally 9s forwards;
-    top: 70vw
 }
 
-.trash{
+.fish {
+  top: 60vw;
+
+  &--small {
+      width: 8vw;
+      top: 70vw
+  }
+
+  &--dead {
+
+  }
+}
+
+
+.trash {
     width: 8vw;
     
     &--glassbottle {

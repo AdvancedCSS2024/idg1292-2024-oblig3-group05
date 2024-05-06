@@ -17,9 +17,12 @@ p {
 }
 
 .goal {
-  position: sticky;
-  opacity: 0.75;
-  width: 10vw;
+  position: fixed;
+  opacity: 0.7;
+  width: 8vw;
+  right: 2%;
+  top: 2%;
+  z-index: 2;
 }
 
 .fade-in {
@@ -42,10 +45,19 @@ p {
   background: linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
 }
 
-.wave-nasty {
+.section--2 {
+  display: flex;
+}
+.section--2--wave--nasty {
   position: absolute;
   bottom: 0%;
   z-index: -1;
+}
+.section--2--wave--nice {
+  position: absolute;
+  bottom: 0%;
+  z-index: -1;
+  display: none;
 }
 
 @keyframes swim-diagonally {
@@ -56,18 +68,28 @@ p {
     transform: translateX(50vh) translateY(15vh);
   }
 }
-.fish--big {
+.fish, .fish--dead {
   width: 10vw;
-  animation: swim-diagonally 9s forwards;
 }
 
+.question-mark {
+  top: 50vw;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.fish, .fish--small, .question-mark {
+  animation: swim-diagonally 9s forwards infinite;
+  position: absolute;
+}
+
+.fish {
+  top: 60vw;
+}
 .fish--small {
   width: 8vw;
-  position: absolute;
-  animation: swim-diagonally 9s forwards;
   top: 70vw;
 }
-
 .trash {
   width: 8vw;
 }
