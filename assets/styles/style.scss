@@ -1,10 +1,18 @@
+// colors 
+// #d3e3e5
+//#828b93
+// 104861
+// 557583
+//81a1a3
+
+
 // Keyframes 
 @keyframes swim-diagonally {
     0% {
-        transform: translateX(100vw) translateY(40vw);
+        transform: translateX(20vw) translateY(0vw);
     }
     100% {
-        transform: translateX(50vh) translateY(15vh);
+        transform: translateX(-10vh) translateY(-40vh);
     }
 }
 // End of Keyframes
@@ -45,18 +53,17 @@ p {
 
 // commons
 .section--1, .section--2, .section--3, .section--4 {
-    height: 100vw;
     position: relative;
     border: solid 2px hotpink;
+    height: 100vh;
 }
 
 // end of commons
 
 // Section 1
-.section--1 {
-    background: #d3e3e5;
-    background: -webkit-linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
+.section--1, .section--2 {
     background: linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
+    position: relative;
 }
 
 
@@ -64,30 +71,22 @@ p {
 
 // Section 2
 .section--2 {
-    display: flex;
-    
+
     &--wave--nasty {
         position: absolute;
-        bottom: 0%;
-        z-index: -1;    
-    }
-
-    &--wave--nice {
-        position: absolute;
-        bottom: 0%;
-        z-index: -1;
-        display:none;
+        bottom: 0;
+        z-index: 0;
     }
 }
 
-@keyframes swim-diagonally {
-     0% {
-         transform: translateX(100vw) translateY(40vw);
-     }
-     100% {
-         transform: translateX(50vh) translateY(15vh);
-     }
- }
+.cont {
+    display: flex;
+
+    &__item {
+        z-index: 1;
+    }
+}
+
 
 .fish, .fish--dead {
     width: 10vw;
@@ -97,12 +96,12 @@ p {
     top: 50vw;
     font-size: 2rem;
     font-weight: bold;
-    rig 
 }
 
 .fish, .fish--small, .question-mark {
     animation: swim-diagonally 9s forwards infinite;
     position: absolute;
+    z-index: 4;
 }
 
 .fish {
@@ -118,12 +117,26 @@ p {
   }
 }
 
-
 .trash {
-    width: 8vw;
-    
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30%;
+
     &--glassbottle {
         opacity: 0.8;
+        width: 8vw;
+        bottom: 0;
+    }
+
+    &--waterbottle {
+        width: 5vw;
+    }
+
+    &--plastic {
+        width: 15vw;
+    }
+
+    &--cigar {
 
     }
 }
@@ -133,23 +146,22 @@ p {
 
 
 // Section 3 
-
+.section--3 {
+    z-index: 3;
+}
 
 
 // End of Section 3 
 
 // underwater grad for sect. 3-4
 .underwater-gradient {
-    background: #104861;
-    background: -webkit-linear-gradient(0deg, #104861 0%, #557583 50%, #81a1a3 100%);
     background: linear-gradient(0deg, #104861 0%, #557583 50%, #81a1a3 100%);
+    z-index: 0;
 }
 
 // Section 4 
 .section--4 {
-    // background: #3a4ca0;
-    // background: -webkit-linear-gradient(0deg, #3a4ca0 0%, #53b8e6 100%);
-    // background: linear-gradient(0deg, #3a4ca0 0%, #53b8e6 100%);
+
 }
 
 .ocean--floor {
