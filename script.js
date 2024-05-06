@@ -53,8 +53,30 @@ document.addEventListener('DOMContentLoaded', function() {
 	  
 });
 
-const cleanOcean = document.getElementById("#cleanbutton")
+ // Get the button element
+ const cleanupButton = document.getElementById('cleanocean');
 
-cleanOcean.addEventListener('click', (e)) => {
-	
-}
+ // Add a click event listener to the button
+ cleanupButton.addEventListener('click', function() {
+   // Get the element with class clouds__small--one
+   const smallCloudElOne = document.querySelector('.clouds__small--one');
+   const smallCloudElTwo = document.querySelector('.clouds__small--two');
+   const smallCloudElThree = document.querySelector('.clouds__small--three');
+   const largeCloudElOne = document.querySelector('.clouds__large--one');
+   const largeCloudElTwo = document.querySelector('.clouds__large--two');
+   const largeCloudElThree = document.querySelector('.clouds__large--three');
+
+   // Add the class 'clean' to the element
+   smallCloudElOne.classList.remove("nasty");
+   smallCloudElOne.classList.add("clean");
+   smallCloudElTwo.classList.remove("nasty");
+   smallCloudElTwo.classList.add("clean");
+   smallCloudElThree.classList.remove("nasty");
+   smallCloudElThree.classList.add("clean");
+   largeCloudElOne.classList.remove("nasty");
+   largeCloudElOne.classList.add("clean");
+   largeCloudElTwo.classList.remove("nasty");
+   largeCloudElTwo.classList.add("clean");
+   largeCloudElThree.classList.remove("nasty");
+   largeCloudElThree.classList.add("clean");
+ });
