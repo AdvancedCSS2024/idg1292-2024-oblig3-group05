@@ -5,15 +5,35 @@
 // 557583
 //81a1a3
 
+$waterGradientStart: #cbeaf4;
+$redbullUtenSukkerBlue: #47c4e0;
+
+:root {
+    font-size: clamp(1rem, calc(1.5vw + 0.4375rem), 1.75rem);
+}
+
 
 // Keyframes 
 @keyframes swim-diagonally {
     0% {
-        transform: translateX(20vw) translateY(0vw);
+        transform: translateX(20vw) translateY(80vw);
     }
     100% {
-        transform: translateX(-10vh) translateY(-40vh);
+        transform: translateX(-30vw) translateY(-20vw);
     }
+}
+
+@keyframes falling-down {
+    0% {
+        transform: translateY(-50vw);
+        transform: rotate(-30deg);
+    }
+    
+    100% {
+        transform: rotate(40deg);
+        transform: translateY(110vh);
+    }
+    
 }
 // End of Keyframes
 
@@ -24,8 +44,16 @@ body, h1 {
     overflow-x: hidden;
 }
 
-p {
+p, h2 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 0.5rem;
 }
 
 
@@ -49,6 +77,11 @@ p {
 .fade-in.appear {
     opacity: 1;
 }
+
+.fade-in.disappear {
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+}
 // end of General
 
 // commons
@@ -61,9 +94,8 @@ p {
 // end of commons
 
 // Section 1
-.section--1, .section--2 {
+.section--1 {
     background: linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
-    position: relative;
 }
 
 
@@ -71,20 +103,34 @@ p {
 
 // Section 2
 .section--2 {
+    background: linear-gradient(0deg, #ffffff 50%, #d3e3e5 100%);
+    height: 100vh;
+    z-index: -2;
 
-    &--wave--nasty {
-        position: absolute;
-        bottom: 0;
-        z-index: 0;
-    }
+     &--wave--nasty {
+         position: absolute;
+         bottom: 0;
+         z-index: -1;
+     }
 }
 
-.cont {
-    display: flex;
+.sky {
+    height: 200px;
+}
 
+.section2__cont {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25%;
+    z-index: 0;
+    
     &__item {
-        z-index: 1;
+        position: absolute;
+        bottom: 33vw;
+        left: 20vw;
     }
+
+
 }
 
 
@@ -93,27 +139,31 @@ p {
 }
 
 .question-mark {
-    top: 50vw;
+    bottom: 5vw;
     font-size: 2rem;
     font-weight: bold;
 }
 
 .fish, .fish--small, .question-mark {
-    animation: swim-diagonally 9s forwards infinite;
+    animation: swim-diagonally 9s forwards;
+    // animation-delay: 5s;
     position: absolute;
-    z-index: 4;
+    z-index: 4; 
+    right: -10vw; 
 }
 
 .fish {
-  top: 60vw;
+  bottom: 0vw;
 
   &--small {
       width: 8vw;
-      top: 70vw
+      bottom: -10vw;
   }
 
   &--dead {
-
+      position: absolute;
+      right: 50vw;
+      transform: rotate(140deg);
   }
 }
 
@@ -121,23 +171,37 @@ p {
     display: flex;
     justify-content: space-around;
     margin-top: 30%;
+    position:absolute;
+    right: 65vw;
+    bottom: 10vw;
 
     &--glassbottle {
         opacity: 0.8;
         width: 8vw;
-        bottom: 0;
     }
 
     &--waterbottle {
+        position:absolute;
         width: 5vw;
+        right: 35vw;
+        top: 0vw;
+        animation: falling-down 9s forwards;
+        z-index: 10;
     }
 
     &--plastic {
+        z-index: 4;
         width: 15vw;
+        right: 80vw;
+        position:absolute;
+        top: 0;
+        right: 10vw;
     }
 
     &--cigar {
-
+        position:absolute;
+        width: 5vw;
+        bottom: 40vw;
     }
 }
 
@@ -147,9 +211,73 @@ p {
 
 // Section 3 
 .section--3 {
-    z-index: 3;
+    
+    &__cont {
+        display: flex;
+        margin-top: 20%;
+
+        &--text {
+            position: absolute;
+            top: 20vw;
+            right: 10vw;
+            width: 30vw;
+        }
+    }
+
+
+
+}
+/* Section 3 trash */
+.turtle {
+    position: absolute;
+    width: 20%;
+    top: 3vw;
+  }
+  
+  .carbattery {
+    width: 20%;
+  }
+
+
+.bottlecap {
+    left: 30vw;
 }
 
+  .bottlecap , .bottlecap--red {
+    width: 5%;
+    position: absolute;
+    bottom: 10vw;
+
+
+    &--red {
+        bottom: 25vw;
+        transform: rotate(20deg);
+        right: 20vw;
+    }
+
+}
+
+  .plastic-bag {
+    width: 20%;
+    position: absolute;
+    left: 5vw;
+  }
+
+  .straw--pink {
+    position: absolute;
+    width: 10%;
+    transform: rotate(90deg);
+    right: 30vw;
+    top: 40.5vw;
+  }
+
+  .battery {
+    transform: rotate(-10deg);
+    width: 10%;
+    position: absolute;
+    bottom: 10vw;
+    right: 15vw;
+  }
 
 // End of Section 3 
 
