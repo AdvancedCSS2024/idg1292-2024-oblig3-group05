@@ -29,16 +29,29 @@ body, h1 {
 
 // Section 1
 .section--1 {
-  background: #d3e3e5;
-  background: -webkit-linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
   background: linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
 }
 
-.beach-wave--nasty {
+.niceweather {
+  background: linear-gradient(0deg, #daf1f9 0%, #86bde6 100%);
+}
+
+.beach-wave--nasty, .beach-wave {
   position: absolute;
   bottom: 0;
-  z-index: 2;
   max-height: 100%;
+}
+
+.beach-wave {
+  display: none;
+}
+
+.cleanwaves {
+  display: block!important;
+}
+
+.nastywaves {
+  display: none;
 }
 
 .clouds__small {
@@ -116,7 +129,7 @@ body, h1 {
 .island {
   position: absolute;
   right: 0;
-  max-width: 50%;
+  max-width: 30%;
   bottom: 0;
 }
 
@@ -265,9 +278,9 @@ h1 {
 
 // Section 2 
 
-
-
-
+.section2waves {
+  display: none;
+}
 
 // End of Section 2 
 
@@ -290,22 +303,41 @@ h1 {
   bottom: 0;
 }
 
-.corals {
+.coral {
   display: flex;
   
-  &--right, &--left {
+  &--right, &--right--nasty, &--left, &--left--nasty {
       bottom: 5vw;
       width: 20vw  ;
       position: absolute;
+      z-index: 3;
   }
 
-  &--right {
+  &--right, &--right--nasty {
       right: 0px;
   }
   
-  &--left {
+  &--left, &--left--nasty {
       left: 0px;
   }
+}
+
+.coral--left--nasty,
+.coral--right--nasty {
+  display: visible;
+}
+
+.coral--left,
+.coral--right {
+  display: none;
+}
+
+.cleanCorals {
+  display: visible!important;
+}
+
+.nastyCorals {
+  display: none!important;
 }
 
 .button--cleanup {
@@ -313,5 +345,6 @@ h1 {
   left: 40%;
   top: 50%;
 }
+
 // End of Section 4 
 

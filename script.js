@@ -65,6 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
    const largeCloudElOne = document.querySelector('.clouds__large--one');
    const largeCloudElTwo = document.querySelector('.clouds__large--two');
    const largeCloudElThree = document.querySelector('.clouds__large--three');
+   const backGrounds = document.querySelector('.section--1');
+   const oceanNasty = document.querySelector('.beach-wave--nasty');
+   const oceanClean = document.querySelector('.beach-wave');
+   const sectionTwoNasty = document.querySelector('.wave-nasty');
+   const sectionTwoClean = document.querySelector('.section2waves');
+   const coralLeftNasty = document.querySelector('.coral--left--nasty');
+   const coralRightNasty = document.querySelector('.coral--right--nasty');
+   const coralLeftClean = document.querySelector('.coral--left');
+   const coralRightClean = document.querySelector('.coral--right');
 
    // Add the class 'clean' to the element
    smallCloudElOne.classList.remove("nasty");
@@ -79,4 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
    largeCloudElTwo.classList.add("clean");
    largeCloudElThree.classList.remove("nasty");
    largeCloudElThree.classList.add("clean");
+   backGrounds.classList.add("niceweather");
+   oceanNasty.classList.add("nastywaves");
+   oceanClean.classList.add("cleanwaves");
+   sectionTwoNasty.classList.add("nastywaves");
+   sectionTwoClean.classList.add("cleanwaves");
+   coralLeftNasty.classList.add("nastyCorals");
+   coralRightNasty.classList.add("nastyCorals");
+   coralRightClean.classList.add("cleanCorals");
+   coralLeftClean.classList.add("cleanCorals");
  });
