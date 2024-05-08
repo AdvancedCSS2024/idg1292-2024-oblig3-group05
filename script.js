@@ -1,8 +1,9 @@
 // DOMContentLoaded for å passe på at dom loader før js.
 document.addEventListener('DOMContentLoaded', function () {
 
-	const sections = document.querySelectorAll("section")
+	const sections = document.querySelectorAll("section");
 	const faders = document.querySelectorAll(".fade-in");
+	
 
 	const options = {
 		root: null,

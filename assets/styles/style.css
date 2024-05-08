@@ -1,7 +1,3 @@
-:root {
-  font-size: clamp(1rem, 1.5vw + 0.4375rem, 1.75rem);
-}
-
 @keyframes swim-diagonally {
   0% {
     transform: translateX(20vw) translateY(80vw);
@@ -12,21 +8,34 @@
 }
 @keyframes falling-down {
   0% {
-    transform: translateY(-50vw);
     transform: rotate(-30deg);
   }
   100% {
     transform: rotate(40deg);
-    transform: translateY(110vh);
+    transform: translateY(135vh);
   }
 }
-body, h1 {
+@keyframes swim-horsointal {
+  0% {
+    transform: translatex(0vw);
+  }
+  100% {
+    transform: translatex(-130vw);
+  }
+}
+body,
+h1 {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
-p, h2 {
+:root {
+  font-size: clamp(1rem, 1.5vw + 0.4375rem, 1.75rem);
+}
+
+p,
+h2 {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -61,7 +70,10 @@ p {
   transition: opacity 500ms ease-out;
 }
 
-.section--1, .section--2, .section--3, .section--4 {
+.section--1,
+.section--2,
+.section--3,
+.section--4 {
   position: relative;
   border: solid 2px hotpink;
   height: 100vh;
@@ -98,7 +110,8 @@ p {
   left: 20vw;
 }
 
-.fish, .fish--dead {
+.fish,
+.fish--dead {
   width: 10vw;
 }
 
@@ -108,8 +121,11 @@ p {
   font-weight: bold;
 }
 
-.fish, .fish--small, .question-mark {
+.fish,
+.fish--small,
+.question-mark {
   animation: swim-diagonally 9s forwards;
+  animation-delay: 5s;
   position: absolute;
   z-index: 4;
   right: -10vw;
@@ -125,6 +141,7 @@ p {
 .fish--dead {
   position: absolute;
   right: 50vw;
+  bottom: 25vw;
   transform: rotate(140deg);
 }
 
@@ -142,9 +159,9 @@ p {
 }
 .trash--waterbottle {
   position: absolute;
-  width: 5vw;
+  width: 4.5vw;
   right: 35vw;
-  top: 0vw;
+  bottom: 5vw;
   animation: falling-down 9s forwards;
   z-index: 10;
 }
@@ -166,35 +183,39 @@ p {
   display: flex;
   margin-top: 20%;
 }
-.section--3__cont--text {
+.section--3__cont__item--text {
   position: absolute;
-  top: 20vw;
+  bottom: 30vw;
   right: 10vw;
   width: 30vw;
 }
 
 /* Section 3 trash */
-.turtle {
-  position: absolute;
-  width: 20%;
-  top: 3vw;
-}
-
 .carbattery {
   width: 20%;
+}
+
+.waterbottle {
+  position: absolute;
+  right: 25vw;
+  bottom: 15vw;
+  width: 5vw;
+  transform: rotate(-10deg);
 }
 
 .bottlecap {
   left: 30vw;
 }
 
-.bottlecap, .bottlecap--red {
+.bottlecap,
+.bottlecap--red {
   width: 5%;
   position: absolute;
   bottom: 10vw;
 }
-.bottlecap--red, .bottlecap--red--red {
-  bottom: 25vw;
+.bottlecap--red,
+.bottlecap--red--red {
+  bottom: 23vw;
   transform: rotate(20deg);
   right: 20vw;
 }
@@ -203,6 +224,7 @@ p {
   width: 20%;
   position: absolute;
   left: 5vw;
+  bottom: 10vw;
 }
 
 .straw--pink {
@@ -210,20 +232,28 @@ p {
   width: 10%;
   transform: rotate(90deg);
   right: 30vw;
-  top: 40.5vw;
+  bottom: 18vw;
 }
 
 .battery {
   transform: rotate(-10deg);
   width: 10%;
   position: absolute;
-  bottom: 10vw;
+  bottom: 6vw;
   right: 15vw;
 }
 
 .underwater-gradient {
   background: linear-gradient(0deg, #104861 0%, #557583 50%, #81a1a3 100%);
   z-index: 0;
+}
+
+.turtle {
+  position: absolute;
+  width: 20%;
+  top: 3vw;
+  right: -30vw;
+  animation: swim-horsointal 20s infinite !important;
 }
 
 .ocean--floor {
