@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.querySelectorAll('.fish, .fish--small, .question-mark, .trash--waterbottle, .trash-floor--bag, .trash-floor--straw')
+                entry.target.querySelectorAll('.fish, .fish--small, .question-mark, #trash--waterbottle, #trash-floor--bag, #trash-floor--straw')
                     .forEach(el => {
                         el.classList.add('animate');
                     });
             } else {
-                entry.target.querySelectorAll('.fish, .fish--small, .question-mark, .trash--waterbottle, .trash-floor--bag, .trash-floor--straw')
+                entry.target.querySelectorAll('.fish, .fish--small, .question-mark, #trash--waterbottle, #trash-floor--bag, #trash-floor--straw')
                     .forEach(el => {
                         el.classList.remove('animate');
                     });
@@ -43,21 +43,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const coralRightClean = document.querySelector('.coral--right');
         const waterGradient = document.querySelector('.underwater-gradient');
         const cleanTheOceanElArr = document.querySelectorAll('.garbage');
-        const clearSkyLarge = document.querySelector('.sky--large--nasty');
-        const clearSkySmall = document.querySelector('.sky--small--nasty');
-
+		const fishGoAway = document.querySelector('.fish--dead');
+		
         backGrounds.classList.add("niceweather");
         oceanNasty.classList.add("nastywaves");
         oceanClean.classList.add("cleanwaves");
         sectionTwoNasty.classList.add("nastywaves");
         sectionTwoClean.classList.add("cleanwaves");
+		fishGoAway.classList.add("nastywaves");
         coralLeftNasty.classList.add("nastyCorals");
         coralRightNasty.classList.add("nastyCorals");
         coralLeftClean.classList.remove("nastyCorals");
         coralRightClean.classList.remove("nastyCorals");
         waterGradient.classList.add('unpolluted');
-        clearSkyLarge.classList.add('cloudnice');
-        clearSkySmall.classList.add('cloudnice');
         cleanTheOceanElArr.forEach(el => el.classList.add('cleanTrash'));
 
         setTimeout(() => {
