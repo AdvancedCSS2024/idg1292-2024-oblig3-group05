@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     
+    'use strict';
+
     const sections = document.querySelectorAll("section");
     const faders = document.querySelectorAll(".fade-in");
 
@@ -43,14 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const coralRightClean = document.querySelector('.coral--right');
         const waterGradient = document.querySelector('.underwater-gradient');
         const cleanTheOceanElArr = document.querySelectorAll('.garbage');
-		const fishGoAway = document.querySelector('.fish--dead');
-		
+        const fishGoAway = document.querySelector('.fish--dead');
+        
         backGrounds.classList.add("niceweather");
         oceanNasty.classList.add("nastywaves");
         oceanClean.classList.add("cleanwaves");
         sectionTwoNasty.classList.add("nastywaves");
         sectionTwoClean.classList.add("cleanwaves");
-		fishGoAway.classList.add("nastywaves");
+        fishGoAway.classList.add("nastywaves");
         coralLeftNasty.classList.add("nastyCorals");
         coralRightNasty.classList.add("nastyCorals");
         coralLeftClean.classList.remove("nastyCorals");
@@ -66,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const appearOptions = {
         threshold: 0.5,
         rootMargin: "0px"
-    }; // Corrected the object closing brace position
+    };
 
     const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
         entries.forEach(entry => {
