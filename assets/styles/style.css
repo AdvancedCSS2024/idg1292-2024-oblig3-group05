@@ -559,18 +559,26 @@ p > a {
 }
 
 @media screen and (max-width: 700px) {
-  .trash--waterbottle, .trash--cigar {
+  .cloud--large--nasty {
+    width: 96vw;
+    height: auto;
+    top: 17%;
+  }
+  .trash--waterbottle, .trash--cigar, .trash--glassbottle, .trash--plastic, .cloud--small--nasty {
     display: none;
   }
   .section2__cont__item {
-    top: 60%;
+    bottom: 0%;
   }
   .section2__cont__text, .section__3cont_text {
     max-width: 50ch;
     min-width: 50ch;
   }
-  .wave-nasty {
-    height: 350px;
+  .cont--fish {
+    right: 6%;
+  }
+  .turtle {
+    right: 0%;
   }
   .section--3__cont__item--text {
     left: 20%;
@@ -581,5 +589,21 @@ p > a {
   }
   .battery {
     top: 28%;
+    width: 15vw;
+    height: auto;
+  }
+  .text--headline {
+    left: 21%;
+  }
+  .text--info {
+    max-width: 50ch;
+  }
+  .trash-floor--bag {
+    bottom: 30%;
+  }
+  .trash-floor--straw {
+    height: 50px;
+    width: auto;
+    bottom: 2%;
   }
 }/*# sourceMappingURL=style.css.map */
