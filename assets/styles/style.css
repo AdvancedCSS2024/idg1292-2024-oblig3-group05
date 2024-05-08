@@ -556,4 +556,16 @@ p > a {
   position: absolute;
   left: 40%;
   top: 50%;
+}
+
+@media screen and (max-width: 700px) {
+  .section2__cont__item {
+    top: 60%;
+  }
+  .section2__cont__text {
+    max-width: 50ch;
+  }
+  .wave-nasty {
+    height: 350px;
+  }
 }/*# sourceMappingURL=style.css.map */

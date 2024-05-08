@@ -294,7 +294,6 @@ h1 {
 .section2__cont {
     display: flex;
     justify-content: space-around;
-    margin-top: 25%;
     z-index: 0;
 
     &__item {
@@ -408,7 +407,6 @@ h1 {
 // Section 3 ----------------------------------------------------------------------------------
 .section--3__cont {
     display: flex;
-    margin-top: 20%;
 
     &__item--text {
         position: absolute;
@@ -629,3 +627,19 @@ p > a {
   top: 50%;
 }
 // End of Section 4
+
+// Media queries
+
+@media screen and (max-width: 700px) {
+  // Section 2
+  .section2__cont__item{
+    top: 60%;
+  }
+  .section2__cont__text{
+    max-width: 50ch;
+  }
+  .wave-nasty{
+    height: 350px;
+  }
+  // End of section 2
+}
