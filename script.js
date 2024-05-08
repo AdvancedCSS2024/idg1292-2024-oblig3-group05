@@ -59,12 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
  // Add a click event listener to the button
  cleanupButton.addEventListener('click', function() {
    // Get the element with class clouds__small--one
-   const smallCloudElOne = document.querySelector('.clouds__small--one');
-   const smallCloudElTwo = document.querySelector('.clouds__small--two');
-   const smallCloudElThree = document.querySelector('.clouds__small--three');
-   const largeCloudElOne = document.querySelector('.clouds__large--one');
-   const largeCloudElTwo = document.querySelector('.clouds__large--two');
-   const largeCloudElThree = document.querySelector('.clouds__large--three');
+   
    const backGrounds = document.querySelector('.section--1');
    const oceanNasty = document.querySelector('.beach-wave--nasty');
    const oceanClean = document.querySelector('.beach-wave');
@@ -74,20 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
    const coralRightNasty = document.querySelector('.coral--right--nasty');
    const coralLeftClean = document.querySelector('.coral--left');
    const coralRightClean = document.querySelector('.coral--right');
+   const waterGradient = document.querySelector('.underwater-gradient');
 
    // Add the class 'clean' to the element
-   smallCloudElOne.classList.remove("nasty");
-   smallCloudElOne.classList.add("clean");
-   smallCloudElTwo.classList.remove("nasty");
-   smallCloudElTwo.classList.add("clean");
-   smallCloudElThree.classList.remove("nasty");
-   smallCloudElThree.classList.add("clean");
-   largeCloudElOne.classList.remove("nasty");
-   largeCloudElOne.classList.add("clean");
-   largeCloudElTwo.classList.remove("nasty");
-   largeCloudElTwo.classList.add("clean");
-   largeCloudElThree.classList.remove("nasty");
-   largeCloudElThree.classList.add("clean");
    backGrounds.classList.add("niceweather");
    oceanNasty.classList.add("nastywaves");
    oceanClean.classList.add("cleanwaves");
@@ -95,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
    sectionTwoClean.classList.add("cleanwaves");
    coralLeftNasty.classList.add("nastyCorals");
    coralRightNasty.classList.add("nastyCorals");
-   coralRightClean.classList.add("cleanCorals");
-   coralLeftClean.classList.add("cleanCorals");
+   coralLeftClean.classList.remove("nastyCorals");
+   coralRightClean.classList.remove("nastyCorals");
+   waterGradient.classList.add('unpolluted');
  });
