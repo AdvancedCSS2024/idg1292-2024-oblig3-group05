@@ -12,10 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                console.log(entry.target);
-                entry.target.classList.add("inverse");
+                entry.target.querySelectorAll('.fish, .fish--small, .question-mark, .trash--waterbottle, .trash-floor--bag, .trash-floor--straw')
+                    .forEach(el => {
+                        el.classList.add('animate');
+                    });
             } else {
-                entry.target.classList.remove("inverse");
+                entry.target.querySelectorAll('.fish, .fish--small, .question-mark, .trash--waterbottle, .trash-floor--bag, .trash-floor--straw')
+                    .forEach(el => {
+                        el.classList.remove('animate');
+                    });
             }
         });
     }, options);
