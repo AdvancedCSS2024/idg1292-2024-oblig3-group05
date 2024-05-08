@@ -338,8 +338,8 @@ h1 {
   z-index: 11;
   width: 10vw;
   position: absolute;
-  left: 40vw;
-  bottom: 10vw;
+  left: 60vw;
+  bottom: 15vw;
 }
 #trash-floor--straw {
   z-index: 10;
@@ -430,6 +430,7 @@ p > a {
   top: 3vw;
   z-index: 10;
   animation: swim-horsointal 20s infinite !important;
+  right: 0%;
 }
 
 .ocean--floor {
@@ -478,6 +479,7 @@ p > a {
   top: 40%;
   left: 35%;
   cursor: pointer;
+  z-index: 100;
 }
 
 .button--cleanup:hover {
