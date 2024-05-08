@@ -1,30 +1,4 @@
-@keyframes swim-diagonally {
-  0% {
-    transform: translateX(20vw) translateY(80vw);
-  }
-  100% {
-    transform: translateX(-30vw) translateY(-20vw);
-  }
-}
-@keyframes falling-down {
-  0% {
-    transform: rotate(-30deg);
-  }
-  100% {
-    transform: rotate(40deg);
-    transform: translateY(135vh);
-  }
-}
-@keyframes swim-horsointal {
-  0% {
-    transform: translatex(0vw);
-  }
-  100% {
-    transform: translatex(-130vw);
-  }
-}
-body,
-h1 {
+body, h1 {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -34,8 +8,7 @@ h1 {
   font-size: clamp(1rem, 1.5vw + 0.4375rem, 1.75rem);
 }
 
-p,
-h2 {
+p, h2 {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -65,47 +38,16 @@ p {
   opacity: 1;
 }
 
-
-.underwater-gradient {
-  background: #104861;
-  background: linear-gradient(0deg, #104861 0%, #557583 50%, #81a1a3 100%);
-}
-
-.section--1, .section--2, .section--3, .section--4 {
-  height: 70vw;
-  border: solid red;
-  position: relative;
-}
-
-.background {
-  position: absolute;
-  bottom: 0;
-}
-
-.island {
-  border-radius: 100% 0% 100% 0%/100% 100% 0% 54%;
-  color: orange;
-  width: 100vw;
-  height: 100vw;
-  border-radius: 100% 0% 0% 25%/70% 25% 25% 0%;
-  z-index: 1;
-  position: absolute;
-}
-
-.wave-nasty {
-  position: absolute;
-  bottom: 0;
-}
-
-.ocean--floor {
-  position: absolute;
-  bottom: 0;
-
 .fade-in.disappear {
   opacity: 0;
   transition: opacity 500ms ease-out;
 }
 
+.section--1, .section--2, .section--3, .section--4 {
+  position: relative;
+  border: solid 2px hotpink;
+  height: 100vh;
+}
 
 .section--1 {
   background: linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
@@ -120,10 +62,6 @@ p {
   position: absolute;
   bottom: 0;
   z-index: -1;
-}
-
-.sky {
-  height: 200px;
 }
 
 .section2__cont {
@@ -171,81 +109,18 @@ p {
   right: 50vw;
   bottom: 25vw;
   transform: rotate(140deg);
-
 }
 
+@keyframes swim-diagonally {
+  0% {
+    transform: translateX(20vw) translateY(80vw);
+  }
+  100% {
+    transform: translateX(-30vw) translateY(-20vw);
+  }
+}
 .trash {
   display: flex;
-}
-.trash--net {
-  transform: scale(0.7);
-  z-index: 10;
-  bottom: 2vw;
-  width: 30vw;
-  position: absolute;
-}
-.trash--bag {
-  z-index: 10;
-  transform: scale(0.1);
-  position: absolute;
-  left: 20vw;
-  align-items: flex-end;
-}
-.trash--straw {
-  z-index: 10;
-  position: absolute;
-  left: 90%;
-  max-width: 10%;
-  max-height: 10%;
-  bottom: 15%;
-}
-
-@keyframes floating {
-  0%, 100% {
-    transform: scale(0.1) translateY(0px);
-  }
-  50% {
-    transform: scale(0.1) translateY(-100px);
-  }
-}
-.trash--bag {
-  animation: floating 2s infinite ease-in-out;
-}
-
-@keyframes rotateCounterClockwise {
-  0%, 100% {
-    transform: rotate(-10deg);
-  }
-  50% {
-    transform: rotate(-25deg);
-  }
-}
-.trash--straw {
-  animation: rotateCounterClockwise 4s infinite ease-in-out;
-}
-
-.text {
-  display: flex;
-  justify-content: center;
-}
-.text--headline {
-  position: absolute;
-  top: 15%;
-  left: 41%;
-  color: whitesmoke;
-}
-.text--info {
-  position: absolute;
-  top: 20%;
-  max-width: 40ch;
-  padding: 5px;
-  color: whitesmoke;
-}
-
-article > a {
-  color: #fcbf5b;
-  text-decoration: none;
-  cursor: pointer;
   justify-content: space-around;
   margin-top: 30%;
   position: absolute;
@@ -255,6 +130,15 @@ article > a {
 .trash--glassbottle {
   opacity: 0.8;
   width: 8vw;
+}
+@keyframes falling-down {
+  0% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(40deg);
+    transform: translateY(135vh);
+  }
 }
 .trash--waterbottle {
   position: absolute;
@@ -289,7 +173,7 @@ article > a {
   width: 30vw;
 }
 
-/* Section 3 trash */
+/* Section 3 Trash */
 .carbattery {
   width: 20%;
 }
@@ -341,6 +225,90 @@ article > a {
   bottom: 6vw;
   right: 15vw;
 }
+
+.underwater-gradient {
+  background: linear-gradient(0deg, #104861 0%, #557583 50%, #81a1a3 100%);
+  z-index: 0;
+}
+
+.trash-floor {
+  display: flex;
+}
+.trash-floor--net {
+  transform: scale(0.7);
+  z-index: 10;
+  bottom: 2vw;
+  width: 30vw;
+  position: absolute;
+}
+.trash-floor--bag {
+  z-index: 10;
+  transform: scale(0.1);
+  position: absolute;
+  left: 20vw;
+  align-items: flex-end;
+}
+.trash-floor--straw {
+  z-index: 10;
+  position: absolute;
+  left: 90%;
+  max-width: 10%;
+  max-height: 10%;
+  bottom: 15%;
+}
+.trash-floor--glassbottle {
+  opacity: 0.8;
+  width: 8vw;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: scale(0.1) translateY(0px);
+  }
+  50% {
+    transform: scale(0.1) translateY(-100px);
+  }
+}
+.trash-floor--bag {
+  animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes rotateCounterClockwise {
+  0%, 100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+}
+.trash-floor--straw {
+  animation: rotateCounterClockwise 4s infinite ease-in-out;
+}
+
+article > a {
+  color: #fcbf5b;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+}
+.text--headline {
+  position: absolute;
+  top: 15%;
+  left: 41%;
+  color: whitesmoke;
+}
+.text--info {
+  position: absolute;
+  top: 20%;
+  max-width: 40ch;
+  padding: 5px;
+  color: whitesmoke;
+}
+
 .turtle {
   position: absolute;
   width: 20%;

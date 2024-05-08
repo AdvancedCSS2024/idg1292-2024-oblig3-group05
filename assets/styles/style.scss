@@ -20,43 +20,8 @@ $greenGray: #81a1a3;
 $darkGreen: #557583;
 $darkestGreen: #104861;
 
-
-// Keyframes
-@keyframes swim-diagonally {
-    0% {
-        transform: translateX(20vw) translateY(80vw);
-    }
-    100% {
-        transform: translateX(-30vw) translateY(-20vw);
-    }
-}
-
-@keyframes falling-down {
-    0% {
-        transform: rotate(-30deg);
-    }
-
-    100% {
-        transform: rotate(40deg);
-        transform: translateY(135vh);
-    }
-}
-
-@keyframes swim-horsointal {
-    0% {
-        transform: translatex(0vw);
-
-    }
-
-    100% {
-        transform: translatex(-130vw);
-    }
-}
-// End of Keyframes
-
 // General
-body,
-h1 {
+body, h1 {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -67,8 +32,7 @@ h1 {
 }
 
 
-p,
-h2 {
+p,h2 {
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
@@ -80,7 +44,6 @@ p {
     font-size: 0.5rem;
 }
 
-// UN goal img
 .goal {
     position: fixed;
     opacity: 0.7;
@@ -91,7 +54,6 @@ p {
 }
 
 // section fade-in animation
-
 .fade-in {
     opacity: 0;
     transition: opacity 500ms ease-in;
@@ -101,50 +63,30 @@ p {
     opacity: 1;
 }
 
-// Section 1
-.section--1 {
-    background: linear-gradient(0deg, $mintGray 0%, $co2Gray 100%);
-}
-
-.background {
-    position: absolute;
-    bottom: 0;
-}
-
-.island {
-    border-radius: 100% 0% 100% 0% / 100% 100% 0% 54% ;
-    color: orange;
-    width: 100vw;
-    height: 100vw;
-    border-radius: 100% 0% 0% 25% / 70% 25% 25% 0%;
-    z-index: 1;
-    position: absolute;
- }
-// End of Section 1
-
-
-// Section 2 
-.ocean--floor {
-    position: absolute;
-    bottom: 0;
-=======
 .fade-in.disappear {
     opacity: 0;
     transition: opacity 500ms ease-out;
 }
 // end of General
 
-// commons
-.section--1,
-.section--2,
-.section--3,
-.section--4 {
+// Commons
+.section--1, .section--2, .section--3, .section--4 {
     position: relative;
     border: solid 2px hotpink;
     height: 100vh;
 }
 
 // end of commons
+
+// Section 1
+.section--1 {
+    background: linear-gradient(0deg, $mintGray 0%, $co2Gray 100%);
+}
+
+// Put falke kode her:
+
+// End of Section 1
+
 // Section 2
 .section--2 {
     background: linear-gradient(0deg, #ffffff 50%, $mintGray 100%);
@@ -156,10 +98,6 @@ p {
         bottom: 0;
         z-index: -1;
     }
-}
-
-.sky {
-    height: 200px;
 }
 
 .section2__cont {
@@ -210,17 +148,41 @@ p {
         bottom: 25vw;
         transform: rotate(140deg);
     }
-
 }
 
-.trash {  
-   justify-content: space-around;
+@keyframes swim-diagonally {
+    0% {
+        transform: translateX(20vw) translateY(80vw);
+    }
+    100% {
+        transform: translateX(-30vw) translateY(-20vw);
+    }
+}
+
+.trash {
+    display: flex;
+    justify-content: space-around;
     margin-top: 30%;
     position: absolute;
     right: 65vw;
     bottom: 10vw;
-  }
 
+    &--glassbottle {
+        opacity: 0.8;
+        width: 8vw;
+    }
+
+    @keyframes falling-down {
+        0% {
+            transform: rotate(-30deg);
+        }
+    
+        100% {
+            transform: rotate(40deg);
+            transform: translateY(135vh);
+        }
+    }
+    
     &--waterbottle {
         position: absolute;
         width: 4.5vw;
@@ -261,7 +223,7 @@ p {
     }
 }
 
-/* Section 3 trash */
+/* Section 3 Trash */
 
 .carbattery {
     width: 20%;
@@ -368,7 +330,7 @@ p {
     }
 }
 
-.trash--bag {
+.trash-floor--bag {
     animation: floating 2s infinite ease-in-out;
 }
 
@@ -382,17 +344,17 @@ p {
     }
   }
 
-  .trash--straw{
+  .trash-floor--straw{
     animation: rotateCounterClockwise 4s infinite ease-in-out;
   }
 
-article > a{
+article > a {
     color: #fcbf5b;
     text-decoration: none;
     cursor: pointer;
+}
 
-
-.text{
+.text {
     display: flex;
     justify-content: center;
 
@@ -420,11 +382,9 @@ article > a{
     animation: swim-horsointal 20s infinite!important;
 }
 
-
 .ocean--floor {
     position: absolute;
     bottom: 0;
-
 }
 
 .corals {
@@ -434,7 +394,7 @@ article > a{
         bottom: 5vw;
         width: 20vw;
         position: absolute;
-
+    }
 
     &--right {
         right: 0px;
@@ -444,5 +404,5 @@ article > a{
         left: 0px;
     }
 }
-// End of Section 4 
 
+// End of Section 4
