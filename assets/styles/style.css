@@ -559,13 +559,27 @@ p > a {
 }
 
 @media screen and (max-width: 700px) {
+  .trash--waterbottle, .trash--cigar {
+    display: none;
+  }
   .section2__cont__item {
     top: 60%;
   }
-  .section2__cont__text {
+  .section2__cont__text, .section__3cont_text {
     max-width: 50ch;
+    min-width: 50ch;
   }
   .wave-nasty {
     height: 350px;
+  }
+  .section--3__cont__item--text {
+    left: 20%;
+    bottom: 35%;
+  }
+  .plastic-bag {
+    top: 12%;
+  }
+  .battery {
+    top: 28%;
   }
 }/*# sourceMappingURL=style.css.map */
