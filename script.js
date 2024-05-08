@@ -1,9 +1,8 @@
 // DOMContentLoaded for å passe på at dom loader før js.
-document.addEventListener('DOMContentLoaded', function () {
-
-	const sections = document.querySelectorAll("section");
-	const faders = document.querySelectorAll(".fade-in");
+document.addEventListener('DOMContentLoaded', function() {
 	
+    const sections = document.querySelectorAll("section")
+	const faders = document.querySelectorAll(".fade-in");
 
 	const options = {
 		root: null,
@@ -11,19 +10,20 @@ document.addEventListener('DOMContentLoaded', function () {
 		rootMargin: "10px"
 	};
 
-	const observer = new IntersectionObserver(function
-		(entries, observer) {
-		entries.forEach(entry => {
 
-			if (entry.isIntersecting) {
+    const observer = new IntersectionObserver(function
+	(entries, observer) {
+        entries.forEach(entry => {
+
+			if(entry.isIntersecting){
 				console.log(entry.target);
 				entry.target.classList.add("inverse");
-			} else {
+			}else{
 				entry.target.classList.remove("inverse");
 			}
-		});
-	}, options);
-
+        });
+    }, options);
+  
 	sections.forEach(section => {
 		observer.observe(section);
 	})
