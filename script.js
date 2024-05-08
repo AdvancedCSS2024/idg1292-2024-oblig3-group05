@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const coralLeftClean = document.querySelector('.coral--left');
         const coralRightClean = document.querySelector('.coral--right');
         const waterGradient = document.querySelector('.underwater-gradient');
+        const cleanTheOceanElArr = document.querySelectorAll('.garbage');
+        const clearSkyLarge = document.querySelector('.sky--large--nasty');
+        const clearSkySmall = document.querySelector('.sky--small--nasty');
 
         backGrounds.classList.add("niceweather");
         oceanNasty.classList.add("nastywaves");
@@ -48,6 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
         coralLeftClean.classList.remove("nastyCorals");
         coralRightClean.classList.remove("nastyCorals");
         waterGradient.classList.add('unpolluted');
+        clearSkyLarge.classList.add('cloudnice');
+        clearSkySmall.classList.add('cloudnice');
+        cleanTheOceanElArr.forEach(el => el.classList.add('cleanTrash'));
+
+        setTimeout(() => {
+            cleanTheOceanElArr.forEach(el => el.classList.add('cleanedTrash'));
+        }, 3000);
     });
 
     const appearOptions = {
