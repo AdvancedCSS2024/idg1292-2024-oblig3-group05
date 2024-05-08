@@ -1,88 +1,72 @@
-// DOMContentLoaded for å passe på at dom loader før js.
 document.addEventListener('DOMContentLoaded', function() {
-	
-    const sections = document.querySelectorAll("section")
-	const faders = document.querySelectorAll(".fade-in");
+    
+    const sections = document.querySelectorAll("section");
+    const faders = document.querySelectorAll(".fade-in");
 
-	const options = {
-		root: null,
-		threshold: 0.25,
-		rootMargin: "10px"
-	};
+    const options = {
+        root: null,
+        threshold: 0.25,
+        rootMargin: "10px"
+    };
 
-    const observer = new IntersectionObserver(function
-	(entries, observer) {
+    const observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
-
-			if(entry.isIntersecting){
-				console.log(entry.target);
-				entry.target.classList.add("inverse");
-			}else{
-				entry.target.classList.remove("inverse");
-			}
+            if (entry.isIntersecting) {
+                console.log(entry.target);
+                entry.target.classList.add("inverse");
+            } else {
+                entry.target.classList.remove("inverse");
+            }
         });
     }, options);
 
-	sections.forEach(section => {
-		observer.observe(section);
-	})
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 
-	const appearOptions = {
-		threshold: 0.5,
-		rootMargin: "0px"
+    const cleanupButton = document.getElementById('cleanocean');
 
- // Get the button element
- const cleanupButton = document.getElementById('cleanocean');
+    cleanupButton.addEventListener('click', function() {
+        const backGrounds = document.querySelector('.section--1');
+        const oceanNasty = document.querySelector('.beach-wave--nasty');
+        const oceanClean = document.querySelector('.beach-wave');
+        const sectionTwoNasty = document.querySelector('.wave-nasty');
+        const sectionTwoClean = document.querySelector('.section2waves');
+        const coralLeftNasty = document.querySelector('.coral--left--nasty');
+        const coralRightNasty = document.querySelector('.coral--right--nasty');
+        const coralLeftClean = document.querySelector('.coral--left');
+        const coralRightClean = document.querySelector('.coral--right');
+        const waterGradient = document.querySelector('.underwater-gradient');
 
- // Add a click event listener to the button
- cleanupButton.addEventListener('click', function() {
-   // Get the element with class clouds__small--one
-   
-   const backGrounds = document.querySelector('.section--1');
-   const oceanNasty = document.querySelector('.beach-wave--nasty');
-   const oceanClean = document.querySelector('.beach-wave');
-   const sectionTwoNasty = document.querySelector('.wave-nasty');
-   const sectionTwoClean = document.querySelector('.section2waves');
-   const coralLeftNasty = document.querySelector('.coral--left--nasty');
-   const coralRightNasty = document.querySelector('.coral--right--nasty');
-   const coralLeftClean = document.querySelector('.coral--left');
-   const coralRightClean = document.querySelector('.coral--right');
-   const waterGradient = document.querySelector('.underwater-gradient');
+        backGrounds.classList.add("niceweather");
+        oceanNasty.classList.add("nastywaves");
+        oceanClean.classList.add("cleanwaves");
+        sectionTwoNasty.classList.add("nastywaves");
+        sectionTwoClean.classList.add("cleanwaves");
+        coralLeftNasty.classList.add("nastyCorals");
+        coralRightNasty.classList.add("nastyCorals");
+        coralLeftClean.classList.remove("nastyCorals");
+        coralRightClean.classList.remove("nastyCorals");
+        waterGradient.classList.add('unpolluted');
+    });
 
-   // Add the class 'clean' to the element
-   backGrounds.classList.add("niceweather");
-   oceanNasty.classList.add("nastywaves");
-   oceanClean.classList.add("cleanwaves");
-   sectionTwoNasty.classList.add("nastywaves");
-   sectionTwoClean.classList.add("cleanwaves");
-   coralLeftNasty.classList.add("nastyCorals");
-   coralRightNasty.classList.add("nastyCorals");
-   coralLeftClean.classList.remove("nastyCorals");
-   coralRightClean.classList.remove("nastyCorals");
-   waterGradient.classList.add('unpolluted');
- });
-                          
-const appearOptions = {
-		threshold: 0.5,
-		rootMargin: "0px"
+    const appearOptions = {
+        threshold: 0.5,
+        rootMargin: "0px"
+    }; // Corrected the object closing brace position
 
-	const appearOnScroll = new IntersectionObserver(function (
-		entries,
-		appearOnScroll
-	) {
-		entries.forEach(entry => {
-			if (!entry.isIntersecting) {
-				return;
-			} else {
-				entry.target.classList.add("appear");
-				appearOnScroll.unobserve(entry.target);
-			}
-		});
-	},
-		appearOptions);
+    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add("appear");
+                appearOnScroll.unobserve(entry.target);
+            }
+        });
+    }, appearOptions);
 
-	faders.forEach(fader => {
-		appearOnScroll.observe(fader);
-	});
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
 });
-

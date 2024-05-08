@@ -1,0 +1,543 @@
+@import url("https://fonts.googleapis.com/css2?family=Oi&display=swap");
+body, h1 {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+:root {
+  font-size: clamp(1rem, 1.5vw + 0.4375rem, 1.75rem);
+}
+
+p, h2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 0.5rem;
+}
+
+.goal {
+  position: fixed;
+  opacity: 0.7;
+  width: 8vw;
+  right: 2%;
+  top: 2%;
+  z-index: 2;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
+.fade-in.disappear {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+.section--1, .section--2, .section--3, .section--4 {
+  position: relative;
+  border: solid 2px hotpink;
+  height: 100vh;
+}
+
+.section--1 {
+  background: linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
+}
+
+.niceweather {
+  background: linear-gradient(0deg, #daf1f9 0%, #86bde6 100%);
+}
+
+.beach-wave--nasty, .beach-wave {
+  position: absolute;
+  bottom: 0;
+  max-height: 100%;
+}
+
+.beach-wave {
+  display: none;
+}
+
+.cleanwaves {
+  display: block !important;
+}
+
+.nastywaves {
+  display: none;
+}
+
+.cloud--large--nasty {
+  position: absolute;
+  top: 7%;
+  width: 50%;
+}
+
+.cloud--small--nasty {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 15%;
+}
+
+.island {
+  position: absolute;
+  right: 0;
+  max-width: 30%;
+  bottom: 0;
+}
+
+.title-wrapper {
+  position: absolute;
+  top: 150px;
+  left: 5%;
+}
+
+h1 {
+  font-family: "Oi", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: #86bde6;
+}
+
+.title-wrapper {
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+#bubbleOne, #bubbleTwo, #bubbleThree, #bubbleFour, #bubbleFive,
+#bubbleSix, #bubbleSeven, #bubbleEight, #bubbleNine, #bubbleTen,
+#bubbleEleven, #bubbleTwelve, #bubbleThirteen, #bubbleFourteen, #bubbleFifteen {
+  position: absolute;
+}
+
+#bubbleOne {
+  width: 1rem;
+  top: 70%;
+  left: 7%;
+}
+
+#bubbleTwo {
+  width: 0.8rem;
+  top: 80%;
+  left: 1%;
+  animation-duration: 8s !important;
+}
+
+#bubbleThree {
+  width: 1.2rem;
+  top: 70%;
+  left: 14%;
+  animation-duration: 9s !important;
+}
+
+#bubbleFour {
+  width: 1.5rem;
+  top: 70%;
+  left: 21%;
+  animation-duration: 7s !important;
+}
+
+#bubbleFive {
+  width: 1rem;
+  top: 70%;
+  left: 26%;
+  animation-duration: 3s !important;
+}
+
+#bubbleSix {
+  width: 1rem;
+  top: 75%;
+  left: 33%;
+  animation-duration: 8s !important;
+}
+
+#bubbleSeven {
+  width: 1.4rem;
+  top: 70%;
+  left: 41%;
+  animation-duration: 10s !important;
+}
+
+#bubbleEight {
+  width: 1.2rem;
+  top: 70%;
+  left: 50%;
+  animation-duration: 4s !important;
+}
+
+#bubbleNine {
+  width: 1rem;
+  top: 70%;
+  left: 55%;
+  animation-duration: 8s !important;
+}
+
+#bubbleTen {
+  width: 1.3rem;
+  top: 70%;
+  left: 60%;
+}
+
+#bubbleEleven {
+  width: 1.5rem;
+  top: 70%;
+  left: 69%;
+  animation-duration: 4s !important;
+}
+
+#bubbleTwelve {
+  width: 1.2rem;
+  top: 70%;
+  left: 74%;
+  animation-duration: 9s !important;
+}
+
+#bubbleThirteen {
+  width: 1rem;
+  top: 70%;
+  left: 80%;
+}
+
+#bubbleFourteen {
+  width: 0.7rem;
+  top: 70%;
+  left: 88%;
+  animation-duration: 4s !important;
+}
+
+#bubbleFifteen {
+  width: 1rem;
+  top: 70%;
+  left: 95%;
+  animation-duration: 3s !important;
+}
+
+.bubbles {
+  animation: bubbly 5s ease-in-out infinite;
+}
+
+@keyframes bubbly {
+  100% {
+    transform: translateY(-90px);
+  }
+}
+.section--2 {
+  background: linear-gradient(0deg, #ffffff 50%, #d3e3e5 100%);
+  height: 100vh;
+  z-index: -2;
+}
+
+.wave-nasty {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
+.section2waves {
+  display: none;
+}
+
+.section2__cont {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25%;
+  z-index: 0;
+}
+.section2__cont__item {
+  position: absolute;
+  bottom: 33vw;
+  left: 20vw;
+}
+
+.fish,
+.fish--dead {
+  width: 10vw;
+}
+
+.question-mark {
+  bottom: 5vw;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.fish,
+.fish--small,
+.question-mark {
+  animation: swim-diagonally 9s forwards;
+  animation-delay: 5s;
+  position: absolute;
+  z-index: 4;
+  right: -10vw;
+}
+
+.fish {
+  bottom: 0vw;
+}
+.fish--small {
+  width: 8vw;
+  bottom: -10vw;
+}
+.fish--dead {
+  position: absolute;
+  right: 50vw;
+  bottom: 25vw;
+  transform: rotate(140deg);
+}
+
+@keyframes swim-diagonally {
+  0% {
+    transform: translateX(20vw) translateY(80vw);
+  }
+  100% {
+    transform: translateX(-30vw) translateY(-20vw);
+  }
+}
+.trash {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30%;
+  position: absolute;
+  right: 65vw;
+  bottom: 10vw;
+}
+.trash--glassbottle {
+  opacity: 0.8;
+  width: 8vw;
+}
+@keyframes falling-down {
+  0% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(40deg);
+    transform: translateY(135vh);
+  }
+}
+.trash--waterbottle {
+  position: absolute;
+  width: 4.5vw;
+  right: 35vw;
+  bottom: 5vw;
+  animation: falling-down 9s forwards;
+  z-index: -1;
+}
+.trash--plastic {
+  z-index: 4;
+  width: 15vw;
+  right: 80vw;
+  position: absolute;
+  top: 0;
+  right: 10vw;
+}
+.trash--cigar {
+  position: absolute;
+  width: 5vw;
+  bottom: 40vw;
+}
+
+.section--3__cont {
+  display: flex;
+  margin-top: 20%;
+}
+.section--3__cont__item--text {
+  position: absolute;
+  bottom: 30vw;
+  right: 10vw;
+  width: 30vw;
+}
+
+.carbattery {
+  width: 20%;
+}
+
+.waterbottle {
+  position: absolute;
+  right: 25vw;
+  bottom: 15vw;
+  width: 5vw;
+  transform: rotate(-10deg);
+}
+
+.bottlecap {
+  left: 30vw;
+}
+
+.bottlecap,
+.bottlecap--red {
+  width: 5%;
+  position: absolute;
+  bottom: 10vw;
+}
+.bottlecap--red,
+.bottlecap--red--red {
+  bottom: 23vw;
+  transform: rotate(20deg);
+  right: 20vw;
+}
+
+.plastic-bag {
+  width: 20%;
+  position: absolute;
+  left: 5vw;
+  bottom: 10vw;
+}
+
+.straw--pink {
+  position: absolute;
+  width: 10%;
+  transform: rotate(90deg);
+  right: 30vw;
+  bottom: 18vw;
+}
+
+.battery {
+  transform: rotate(-10deg);
+  width: 10%;
+  position: absolute;
+  bottom: 6vw;
+  right: 15vw;
+}
+
+.underwater-gradient {
+  background: linear-gradient(0deg, #104861 0%, #557583 50%, #81a1a3 100%);
+  z-index: 0;
+}
+
+.unpolluted {
+  background: linear-gradient(0deg, #3a4ca0 0%, #47c4e0 50%, #cbeaf4 100%);
+}
+
+.trash-floor {
+  display: flex;
+}
+.trash-floor--net {
+  transform: scale(0.7);
+  z-index: 10;
+  bottom: 8vw;
+  width: 30vw;
+  position: absolute;
+}
+.trash-floor--bag {
+  z-index: 10;
+  transform: scale(0.1);
+  position: absolute;
+  left: 20vw;
+  align-items: flex-end;
+}
+.trash-floor--straw {
+  z-index: 10;
+  position: absolute;
+  left: 90%;
+  max-width: 10%;
+  max-height: 10%;
+  bottom: 15%;
+}
+.trash-floor--glassbottle {
+  opacity: 0.8;
+  width: 8vw;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: scale(0.1) translateY(0px);
+  }
+  50% {
+    transform: scale(0.1) translateY(-100px);
+  }
+}
+.trash-floor--bag {
+  animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes rotateCounterClockwise {
+  0%, 100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+}
+.trash-floor--straw {
+  animation: rotateCounterClockwise 4s infinite ease-in-out;
+}
+
+article > a {
+  color: #fcbf5b;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.text--headline {
+  position: absolute;
+  top: 15%;
+  left: 41%;
+  color: whitesmoke;
+}
+.text--info {
+  position: absolute;
+  top: 20%;
+  max-width: 40ch;
+  padding: 5px;
+  color: whitesmoke;
+}
+
+.turtle {
+  position: absolute;
+  width: 20%;
+  top: 3vw;
+  right: -30vw;
+  animation: swim-horsointal 20s infinite !important;
+}
+
+.ocean--floor {
+  position: absolute;
+  bottom: 0;
+}
+
+.coral {
+  display: flex;
+}
+.coral--right, .coral--right--nasty, .coral--left, .coral--left--nasty {
+  width: 20vw;
+  position: absolute;
+  z-index: 0;
+}
+.coral--right, .coral--right--nasty {
+  bottom: 8vw;
+  right: 0px;
+}
+.coral--left, .coral--left--nasty {
+  left: 5vw;
+  bottom: 10vw;
+}
+
+.coral--left--nasty,
+.coral--right--nasty {
+  display: visible;
+}
+
+.nastyCorals {
+  display: none !important;
+}
+
+.button--cleanup {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+}/*# sourceMappingURL=style.css.map */

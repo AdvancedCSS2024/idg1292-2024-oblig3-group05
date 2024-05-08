@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
-// Color variables:
+// Color variables ----------------------------------------------------------------------------------
 
 // sky gradient nice
 $coboltBlue: #86bde6;
@@ -21,7 +21,7 @@ $greenGray: #81a1a3;
 $darkGreen: #557583;
 $darkestGreen: #104861;
 
-// General
+// General ----------------------------------------------------------------------------------
 body, h1 {
     margin: 0;
     padding: 0;
@@ -54,7 +54,7 @@ p {
     z-index: 2;
 }
 
-// section fade-in animation
+// Section fade-in animation 
 .fade-in {
     opacity: 0;
     transition: opacity 500ms ease-in;
@@ -79,7 +79,7 @@ p {
 
 // end of commons
 
-// Section 1
+// Section 1 ----------------------------------------------------------------------------------
 .section--1 {
     background: linear-gradient(0deg, $mintGray 0%, $co2Gray 100%);
 }
@@ -265,17 +265,18 @@ h1 {
 
 // End of Section 1
 
-// Section 2
+// Section 2 ----------------------------------------------------------------------------------
 .section--2 {
     background: linear-gradient(0deg, #ffffff 50%, $mintGray 100%);
     height: 100vh;
     z-index: -2;
 
-    &--wave--nasty {
-        position: absolute;
-        bottom: 0;
-        z-index: -1;
-    }
+  }
+  
+.wave-nasty {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
 }
 
 .section2waves {
@@ -371,7 +372,7 @@ h1 {
         right: 35vw;
         bottom: 5vw;
         animation: falling-down 9s forwards;
-        z-index: 10;
+        z-index: -1;
     }
 
     &--plastic {
@@ -392,7 +393,7 @@ h1 {
 
 // End of Section 2
 
-// Section 3
+// Section 3 ----------------------------------------------------------------------------------
 .section--3__cont {
     display: flex;
     margin-top: 20%;
@@ -405,7 +406,7 @@ h1 {
     }
 }
 
-/* Section 3 Trash */
+// Section 3 Trash
 
 .carbattery {
     width: 20%;
@@ -461,7 +462,7 @@ h1 {
 
 // End of Section 3
 
-// underwater grad for sect. 3-4
+// underwater grad for sect. 3-4 ----------------------------------------------------------------------------------
 .underwater-gradient {
     background: linear-gradient(0deg, $darkestGreen 0%, $darkGreen 50%, $greenGray 100%);
     z-index: 0;
@@ -471,14 +472,14 @@ h1 {
   background: linear-gradient(0deg, #3a4ca0 0%, #47c4e0 50%, #cbeaf4 100%);
 }
 
-// Section 4
+// Section 4 ----------------------------------------------------------------------------------
 .trash-floor {
     display: flex;
  
     &--net {
         transform: scale(0.7);
         z-index: 10;
-        bottom: 2vw;
+        bottom: 8vw;
         width: 30vw;
         position: absolute;
     }
@@ -543,6 +544,7 @@ article > a {
 .text {
     display: flex;
     justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     &--headline{
         position: absolute;
@@ -577,18 +579,19 @@ article > a {
   display: flex;
   
   &--right, &--right--nasty, &--left, &--left--nasty {
-      bottom: 5vw;
       width: 20vw  ;
       position: absolute;
-      z-index: 3;
+      z-index: 0;
   }
 
   &--right, &--right--nasty {
+      bottom: 8vw;
       right: 0px;
   }
   
   &--left, &--left--nasty {
-      left: 0px;
+      left: 5vw;
+      bottom: 10vw;
   }
 }
 
