@@ -73,7 +73,6 @@ p {
 // Commons
 .section--1, .section--2, .section--3, .section--4 {
     position: relative;
-    border: solid 2px hotpink;
     height: 100vh;
 }
 
@@ -106,6 +105,14 @@ p {
   display: none;
 }
 
+.nastywaves, .cleanwaves, .beach-wave, .beach-wave--nasty {
+  z-index: 3;
+}
+
+.island {
+  z-index: 4;
+}
+
 .cloud--large--nasty {
   position: absolute;
   top: 7%;
@@ -136,7 +143,7 @@ h1 {
   font-family: "Oi", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #86bde6;
 }
 
@@ -268,7 +275,7 @@ h1 {
 // Section 2 ----------------------------------------------------------------------------------
 .section--2 {
     background: linear-gradient(0deg, #ffffff 50%, $mintGray 100%);
-    height: 100vh;
+    height: 120vh;
     z-index: -2;
 
   }
@@ -286,7 +293,7 @@ h1 {
 .section2__cont {
     display: flex;
     justify-content: space-around;
-    margin-top: 25%;
+
     z-index: 0;
 
     &__item {
@@ -294,6 +301,11 @@ h1 {
         bottom: 33vw;
         left: 20vw;
     }
+}
+
+.cont--fish {
+  position: absolute;
+  bottom: 20vw;
 }
 
 .fish,
@@ -311,9 +323,8 @@ h1 {
 .fish--small,
 .question-mark {
     animation: swim-diagonally 9s forwards;
-    animation-delay: 5s;
     position: absolute;
-    z-index: 4;
+    z-index: 10;
     right: -10vw;
 }
 
@@ -335,17 +346,18 @@ h1 {
 
 @keyframes swim-diagonally {
     0% {
-        transform: translateX(20vw) translateY(80vw);
+        transform: translateX(0vw);
+        opacity: 0;
     }
     100% {
-        transform: translateX(-30vw) translateY(-20vw);
+      opacity: 1;
+        transform: translateX(-10vw);
     }
 }
 
 .trash {
     display: flex;
     justify-content: space-around;
-    margin-top: 30%;
     position: absolute;
     right: 65vw;
     bottom: 10vw;
@@ -357,12 +369,11 @@ h1 {
 
     @keyframes falling-down {
         0% {
-            transform: rotate(-30deg);
+        transform: rotate(-30deg);
         }
     
         100% {
-            transform: rotate(40deg);
-            transform: translateY(135vh);
+        transform: translateY(135vh);
         }
     }
     
@@ -370,9 +381,9 @@ h1 {
         position: absolute;
         width: 4.5vw;
         right: 35vw;
-        bottom: 5vw;
+        bottom: 0vw;
         animation: falling-down 9s forwards;
-        z-index: -1;
+        z-index: 0;
     }
 
     &--plastic {
@@ -396,7 +407,6 @@ h1 {
 // Section 3 ----------------------------------------------------------------------------------
 .section--3__cont {
     display: flex;
-    margin-top: 20%;
 
     &__item--text {
         position: absolute;
@@ -465,7 +475,7 @@ h1 {
 // underwater grad for sect. 3-4 ----------------------------------------------------------------------------------
 .underwater-gradient {
     background: linear-gradient(0deg, $darkestGreen 0%, $darkGreen 50%, $greenGray 100%);
-    z-index: 0;
+    z-index: -2;
 }
 
 .unpolluted {
@@ -479,7 +489,7 @@ h1 {
     &--net {
         transform: scale(0.7);
         z-index: 10;
-        bottom: 8vw;
+        bottom: 10vw;
         width: 30vw;
         position: absolute;
     }
@@ -498,7 +508,7 @@ h1 {
         left: 90%;
         max-width: 10%;
         max-height: 10%;
-        bottom: 15%
+        bottom: 10%
     }
 
 
@@ -562,12 +572,21 @@ article > a {
     }
 }
 
+@keyframes swim-horsointal {
+  0% {
+    transform: translatex(0vw);
+  }
+  100% {
+    transform: translatex(-130vw);
+}
+}
+
 .turtle {
     position: absolute;
     width: 20%;
     top: 3vw;
-    right: -30vw;
     animation: swim-horsointal 20s infinite!important;
+    z-index: 10;
 }
 
 .ocean--floor {
@@ -581,7 +600,7 @@ article > a {
   &--right, &--right--nasty, &--left, &--left--nasty {
       width: 20vw  ;
       position: absolute;
-      z-index: 0;
+      z-index: 1;
   }
 
   &--right, &--right--nasty {
