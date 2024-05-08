@@ -139,7 +139,7 @@ h1 {
 }
 .section--1__intro--text {
   max-width: 60ch;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 
@@ -454,7 +454,7 @@ p > a {
 }
 .text--info {
   position: absolute;
-  top: 21%;
+  top: 10%;
   color: whitesmoke;
 }
 
