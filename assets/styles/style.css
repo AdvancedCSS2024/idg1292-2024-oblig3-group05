@@ -19,6 +19,7 @@ h2 {
 
 p {
   font-size: 0.5rem;
+  max-width: 70ch;
 }
 
 .goal {
@@ -46,7 +47,6 @@ p {
 
 .section--1, .section--2, .section--3, .section--4 {
   position: relative;
-  border: solid 2px hotpink;
   height: 100vh;
 }
 
@@ -112,7 +112,7 @@ h1 {
   font-family: "Oi", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #86bde6;
 }
 
@@ -240,7 +240,7 @@ h1 {
 }
 .section--2 {
   background: linear-gradient(0deg, #ffffff 50%, #d3e3e5 100%);
-  height: 100vh;
+  height: 120vh;
   z-index: -2;
 }
 
@@ -257,13 +257,17 @@ h1 {
 .section2__cont {
   display: flex;
   justify-content: space-around;
-  margin-top: 25%;
   z-index: 0;
 }
 .section2__cont__item {
   position: absolute;
   bottom: 33vw;
   left: 20vw;
+}
+
+.cont--fish {
+  position: absolute;
+  bottom: 20vw;
 }
 
 .fish,
@@ -281,9 +285,8 @@ h1 {
 .fish--small,
 .question-mark {
   animation: swim-diagonally 9s forwards;
-  animation-delay: 5s;
   position: absolute;
-  z-index: 4;
+  z-index: 10;
   right: -10vw;
 }
 
@@ -303,16 +306,17 @@ h1 {
 
 @keyframes swim-diagonally {
   0% {
-    transform: translateX(20vw) translateY(80vw);
+    transform: translateX(0vw);
+    opacity: 0;
   }
   100% {
-    transform: translateX(-30vw) translateY(-20vw);
+    opacity: 1;
+    transform: translateX(-10vw);
   }
 }
 #trash {
   display: flex;
   justify-content: space-around;
-  margin-top: 30%;
   position: absolute;
   right: 65vw;
   bottom: 10vw;
@@ -326,7 +330,6 @@ h1 {
     transform: rotate(-30deg);
   }
   100% {
-    transform: rotate(40deg);
     transform: translateY(135vh);
   }
 }
@@ -334,9 +337,9 @@ h1 {
   position: absolute;
   width: 4.5vw;
   right: 35vw;
-  bottom: 5vw;
+  bottom: 0vw;
   animation: falling-down 9s forwards;
-  z-index: -1;
+  z-index: 0;
 }
 #trash--plastic {
   z-index: 4;
@@ -354,7 +357,6 @@ h1 {
 
 .section--3__cont {
   display: flex;
-  margin-top: 20%;
 }
 .section--3__cont__item--text {
   position: absolute;
@@ -413,7 +415,7 @@ h1 {
 
 .underwater-gradient {
   background: linear-gradient(0deg, #104861 0%, #557583 50%, #81a1a3 100%);
-  z-index: 0;
+  z-index: -2;
 }
 
 .unpolluted {
@@ -426,7 +428,7 @@ h1 {
 #trash-floor--net {
   transform: scale(0.7);
   z-index: 10;
-  bottom: 8vw;
+  bottom: 10vw;
   width: 30vw;
   position: absolute;
 }
@@ -443,7 +445,7 @@ h1 {
   left: 90%;
   max-width: 10%;
   max-height: 10%;
-  bottom: 15%;
+  bottom: 10%;
 }
 #trash-floor--glassbottle {
   opacity: 0.8;
@@ -489,7 +491,7 @@ h1 {
     opacity: 0;
   }
 }
-article > a {
+p > a {
   color: #fcbf5b;
   text-decoration: none;
   cursor: pointer;
@@ -503,23 +505,29 @@ article > a {
 .text--headline {
   position: absolute;
   top: 15%;
-  left: 41%;
+  left: 35%;
   color: whitesmoke;
 }
 .text--info {
   position: absolute;
-  top: 20%;
-  max-width: 40ch;
-  padding: 5px;
+  top: 21%;
   color: whitesmoke;
 }
 
+@keyframes swim-horsointal {
+  0% {
+    transform: translatex(0vw);
+  }
+  100% {
+    transform: translatex(-130vw);
+  }
+}
 .turtle {
   position: absolute;
   width: 20%;
   top: 3vw;
-  right: -30vw;
   animation: swim-horsointal 20s infinite !important;
+  z-index: 10;
 }
 
 .ocean--floor {
@@ -533,7 +541,7 @@ article > a {
 .coral--right, .coral--right--nasty, .coral--left, .coral--left--nasty {
   width: 20vw;
   position: absolute;
-  z-index: 0;
+  z-index: 1;
 }
 .coral--right, .coral--right--nasty {
   bottom: 8vw;
@@ -561,4 +569,30 @@ article > a {
 
 .cleanedTrash {
   display: none !important;
+}
+
+@media screen and (max-width: 700px) {
+  .trash--waterbottle, .trash--cigar {
+    display: none;
+  }
+  .section2__cont__item {
+    top: 60%;
+  }
+  .section2__cont__text, .section__3cont_text {
+    max-width: 50ch;
+    min-width: 50ch;
+  }
+  .wave-nasty {
+    height: 350px;
+  }
+  .section--3__cont__item--text {
+    left: 20%;
+    bottom: 35%;
+  }
+  .plastic-bag {
+    top: 12%;
+  }
+  .battery {
+    top: 28%;
+  }
 }/*# sourceMappingURL=style.css.map */
