@@ -1,0 +1,132 @@
+body, h1 {
+  margin: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
+.underwater-gradient {
+  background: #104861;
+  background: linear-gradient(0deg, #104861 0%, #557583 50%, #81a1a3 100%);
+}
+
+.section--1, .section--2, .section--3, .section--4 {
+  height: 70vw;
+  border: solid red;
+  position: relative;
+}
+
+.section--1 {
+  background: #d3e3e5;
+  background: linear-gradient(0deg, #d3e3e5 0%, #828b93 100%);
+}
+
+.background {
+  position: absolute;
+  bottom: 0;
+}
+
+.island {
+  border-radius: 100% 0% 100% 0%/100% 100% 0% 54%;
+  color: orange;
+  width: 100vw;
+  height: 100vw;
+  border-radius: 100% 0% 0% 25%/70% 25% 25% 0%;
+  z-index: 1;
+  position: absolute;
+}
+
+.wave-nasty {
+  position: absolute;
+  bottom: 0;
+}
+
+.ocean--floor {
+  position: absolute;
+  bottom: 0;
+}
+
+.trash {
+  display: flex;
+}
+.trash--net {
+  transform: scale(0.7);
+  z-index: 10;
+  bottom: 2vw;
+  width: 30vw;
+  position: absolute;
+}
+.trash--bag {
+  z-index: 10;
+  transform: scale(0.1);
+  position: absolute;
+  left: 20vw;
+  align-items: flex-end;
+}
+.trash--straw {
+  z-index: 10;
+  position: absolute;
+  left: 90%;
+  max-width: 10%;
+  max-height: 10%;
+  bottom: 15%;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: scale(0.1) translateY(0px);
+  }
+  50% {
+    transform: scale(0.1) translateY(-100px);
+  }
+}
+.trash--bag {
+  animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes rotateCounterClockwise {
+  0%, 100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+}
+.trash--straw {
+  animation: rotateCounterClockwise 4s infinite ease-in-out;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+}
+.text--info {
+  position: absolute;
+  top: 20%;
+  max-width: 40ch;
+  background-color: gray;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.corals {
+  display: flex;
+}
+.corals--right, .corals--left {
+  bottom: 5vw;
+  width: 20vw;
+  position: absolute;
+}
+.corals--right {
+  right: 0px;
+}
+.corals--left {
+  left: 0px;
+}/*# sourceMappingURL=style.css.map */
