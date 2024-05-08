@@ -619,6 +619,10 @@ p > a {
     margin: 0;
   }
 
+  h1 {
+    padding-top: 200px;
+  }
+
   .cloud--large--nice {
     width: 96vw;
     height: auto;
@@ -638,13 +642,12 @@ p > a {
   }
   
   .title {
-    top: 20vw;
-    border: solid 2px hotpink;
-    
+    top: 10vw;    
 }
 
 .section--1__intro {
     width: 100%;
+    top: 65%;
 }
   // End of section 1
 
