@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		rootMargin: "10px"
 	};
 
+
     const observer = new IntersectionObserver(function
 	(entries, observer) {
         entries.forEach(entry => {
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
         });
     }, options);
-
+  
 	sections.forEach(section => {
 		observer.observe(section);
 	})
@@ -30,25 +31,24 @@ document.addEventListener('DOMContentLoaded', function() {
 	const appearOptions = {
 		threshold: 0.5,
 		rootMargin: "0px"
-	  };
-	  
-	  const appearOnScroll = new IntersectionObserver(function(
+	};
+
+	const appearOnScroll = new IntersectionObserver(function (
 		entries,
 		appearOnScroll
-	  ) {
+	) {
 		entries.forEach(entry => {
-		  if (!entry.isIntersecting) {
-			return;
-		  } else {
-			entry.target.classList.add("appear");
-			appearOnScroll.unobserve(entry.target);
-		  }
+			if (!entry.isIntersecting) {
+				return;
+			} else {
+				entry.target.classList.add("appear");
+				appearOnScroll.unobserve(entry.target);
+			}
 		});
-	  },
-	  appearOptions);
-	  
-	  faders.forEach(fader => {
+	},
+		appearOptions);
+
+	faders.forEach(fader => {
 		appearOnScroll.observe(fader);
-	  });
-	  
+	});
 });
