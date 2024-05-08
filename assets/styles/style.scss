@@ -146,15 +146,26 @@ body, h1 {
     display: flex;
     justify-content: center;
 
+    &--headline{
+        position: absolute;
+        top: 15%;
+        left: 41%;
+        color: whitesmoke;
+    }   
+
     &--info{
         position: absolute;
         top: 20%;
         max-width: 40ch;
-        background-color: gray;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
         padding: 5px;
+        color: whitesmoke;
     }
+}
+
+article > a{
+    color: #fcbf5b;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .corals {
