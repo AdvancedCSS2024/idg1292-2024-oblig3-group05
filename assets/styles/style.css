@@ -76,6 +76,14 @@ p {
   display: none;
 }
 
+.nastywaves, .cleanwaves, .beach-wave, .beach-wave--nasty {
+  z-index: 3;
+}
+
+.island {
+  z-index: 4;
+}
+
 .cloud--large--nasty,
 .cloud--large--nice {
   position: absolute;
