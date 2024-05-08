@@ -114,17 +114,23 @@ p {
   z-index: 4;
 }
 
-.cloud--large--nasty {
+.cloud--large--nasty,
+.cloud--large--nice {
   position: absolute;
   top: 7%;
   width: 50%;
 }
 
-.cloud--small--nasty {
+.cloud--small--nasty,
+.cloud--small--nice {
   position: absolute;
   top: 10%;
   left: 50%;
   width: 15%;
+}
+
+.cloudnice {
+  display: none;
 }
 
 .island {
@@ -361,7 +367,7 @@ h1 {
     }
 }
 
-.trash {
+#trash {
     display: flex;
     justify-content: space-around;
     position: absolute;
@@ -432,11 +438,7 @@ h1 {
 
 // Section 3 Trash
 
-.carbattery {
-    width: 20%;
-}
-
-.waterbottle {
+#waterbottle {
     position: absolute;
     right: 25vw;
     bottom: 15vw;
@@ -444,12 +446,12 @@ h1 {
     transform: rotate(-10deg);
 }
 
-.bottlecap {
+#bottlecap {
     left: 30vw;
 }
 
-.bottlecap,
-.bottlecap--red {
+#bottlecap,
+#bottlecap--red {
     width: 5%;
     position: absolute;
     bottom: 10vw;
@@ -461,15 +463,15 @@ h1 {
     }
 }
 
-.plastic-bag {
-    width: 25%;
+#plastic-bag {
+    width: 20%;
     position: absolute;
     left: 10vw;
     opacity: 0.8;
     bottom: 20vw;
 }
 
-.straw--pink {
+#straw--pink {
     position: absolute;
     width: 10%;
     transform: rotate(90deg);
@@ -477,7 +479,7 @@ h1 {
     bottom: 18vw;
 }
 
-.battery {
+#battery {
     transform: rotate(-10deg);
     width: 10%;
     position: absolute;
@@ -498,7 +500,7 @@ h1 {
 }
 
 // Section 4 ----------------------------------------------------------------------------------
-.trash-floor {
+#trash-floor {
     display: flex;
  
     &--net {
@@ -543,7 +545,7 @@ h1 {
     }
 }
 
-.trash-floor--bag.animate {
+#trash-floor--bag {
     animation: floating 2s infinite ease-in-out;
 }
 
@@ -557,8 +559,24 @@ h1 {
     }
   }
 
-  .trash-floor--straw.animate{
+  #trash-floor--straw{
     animation: rotateCounterClockwise 4s infinite ease-in-out;
+  }
+
+  .cleanTrash {
+    animation: trashaway 3s ease-out!important;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes trashaway {
+    0% {
+      transform: translateY(-20px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
   }
 
 p > a {
@@ -641,6 +659,10 @@ p > a {
   position: absolute;
   left: 40%;
   top: 50%;
+}
+
+.cleanedTrash {
+  display: none!important;
 }
 // End of Section 4
 

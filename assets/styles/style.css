@@ -84,17 +84,23 @@ p {
   z-index: 4;
 }
 
-.cloud--large--nasty {
+.cloud--large--nasty,
+.cloud--large--nice {
   position: absolute;
   top: 7%;
   width: 50%;
 }
 
-.cloud--small--nasty {
+.cloud--small--nasty,
+.cloud--small--nice {
   position: absolute;
   top: 10%;
   left: 50%;
   width: 15%;
+}
+
+.cloudnice {
+  display: none;
 }
 
 .island {
@@ -322,14 +328,14 @@ h1 {
     transform: translateX(-10vw);
   }
 }
-.trash {
+#trash {
   display: flex;
   justify-content: space-around;
   position: absolute;
   right: 65vw;
   bottom: 10vw;
 }
-.trash--glassbottle {
+#trash--glassbottle {
   opacity: 0.8;
   width: 8vw;
 }
@@ -344,7 +350,7 @@ h1 {
     transform: translateY(85vh);
   }
 }
-.trash--waterbottle {
+#trash--waterbottle {
   position: absolute;
   width: 4.5vw;
   right: 30vw;
@@ -352,7 +358,7 @@ h1 {
   z-index: 4;
   opacity: 0;
 }
-.trash--plastic {
+#trash--plastic {
   z-index: 4;
   width: 15vw;
   right: 80vw;
@@ -360,7 +366,7 @@ h1 {
   top: 0;
   right: 10vw;
 }
-.trash--cigar {
+#trash--cigar {
   position: absolute;
   width: 5vw;
   bottom: 40vw;
@@ -380,11 +386,7 @@ h1 {
   width: 30vw;
 }
 
-.carbattery {
-  width: 20%;
-}
-
-.waterbottle {
+#waterbottle {
   position: absolute;
   right: 25vw;
   bottom: 15vw;
@@ -392,32 +394,32 @@ h1 {
   transform: rotate(-10deg);
 }
 
-.bottlecap {
+#bottlecap {
   left: 30vw;
 }
 
-.bottlecap,
-.bottlecap--red {
+#bottlecap,
+#bottlecap--red {
   width: 5%;
   position: absolute;
   bottom: 10vw;
 }
-.bottlecap--red,
-.bottlecap--red--red {
+#bottlecap--red,
+#bottlecap--red--red {
   bottom: 23vw;
   transform: rotate(20deg);
   right: 20vw;
 }
 
-.plastic-bag {
-  width: 25%;
+#plastic-bag {
+  width: 20%;
   position: absolute;
   left: 10vw;
   opacity: 0.8;
   bottom: 20vw;
 }
 
-.straw--pink {
+#straw--pink {
   position: absolute;
   width: 10%;
   transform: rotate(90deg);
@@ -425,7 +427,7 @@ h1 {
   bottom: 18vw;
 }
 
-.battery {
+#battery {
   transform: rotate(-10deg);
   width: 10%;
   position: absolute;
@@ -442,17 +444,17 @@ h1 {
   background: linear-gradient(0deg, #3a4ca0 0%, #47c4e0 50%, #cbeaf4 100%);
 }
 
-.trash-floor {
+#trash-floor {
   display: flex;
 }
-.trash-floor--net {
+#trash-floor--net {
   transform: scale(0.7);
   z-index: 10;
   bottom: 10vw;
   width: 30vw;
   position: absolute;
 }
-.trash-floor--bag {
+#trash-floor--bag {
   z-index: 10;
   transform: scale(0.1);
   position: absolute;
@@ -460,7 +462,7 @@ h1 {
   bottom: -30vw;
   align-items: flex-end;
 }
-.trash-floor--straw {
+#trash-floor--straw {
   z-index: 10;
   position: absolute;
   left: 90%;
@@ -468,7 +470,7 @@ h1 {
   max-height: 10%;
   bottom: 10%;
 }
-.trash-floor--glassbottle {
+#trash-floor--glassbottle {
   opacity: 0.8;
   width: 8vw;
 }
@@ -481,7 +483,7 @@ h1 {
     transform: scale(0.1) translateY(-100px);
   }
 }
-.trash-floor--bag.animate {
+#trash-floor--bag {
   animation: floating 2s infinite ease-in-out;
 }
 
@@ -493,10 +495,25 @@ h1 {
     transform: rotate(-25deg);
   }
 }
-.trash-floor--straw.animate {
+#trash-floor--straw {
   animation: rotateCounterClockwise 4s infinite ease-in-out;
 }
 
+.cleanTrash {
+  animation: trashaway 3s ease-out !important;
+  animation-iteration-count: 1;
+}
+
+@keyframes trashaway {
+  0% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
 p > a {
   color: #fcbf5b;
   text-decoration: none;
@@ -571,6 +588,10 @@ p > a {
   position: absolute;
   left: 40%;
   top: 50%;
+}
+
+.cleanedTrash {
+  display: none !important;
 }
 
 @media screen and (max-width: 700px) {
