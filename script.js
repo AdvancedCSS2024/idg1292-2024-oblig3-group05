@@ -1,24 +1,26 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
-    'use strict';
-
+document.addEventListener('DOMContentLoaded', function() {'use strict';
+	// selecting items that shall be faded inn
     const sections = document.querySelectorAll("section");
     const faders = document.querySelectorAll(".fade-in");
 
+	// intersection obererver settings
     const options = {
         root: null,
         threshold: 0.25,
         rootMargin: "10px"
     };
 
+	// IntersectionObserver for fading in elements
     const observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+				// Adding animation class if the element is in viewport
                 entry.target.querySelectorAll('.fish, .fish--small, .question-mark, #trash--waterbottle, #trash-floor--bag, #trash-floor--straw')
                     .forEach(el => {
                         el.classList.add('animate');
                     });
             } else {
+				// Removing animation class if the element is not in viewport
                 entry.target.querySelectorAll('.fish, .fish--small, .question-mark, #trash--waterbottle, #trash-floor--bag, #trash-floor--straw')
                     .forEach(el => {
                         el.classList.remove('animate');
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, options);
 
+	// Observing all sections if they are intersectiing
     sections.forEach(section => {
         observer.observe(section);
     });
@@ -65,11 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     });
 
+	// intersection obererver settings for appearonscroll
     const appearOptions = {
         threshold: 0.5,
         rootMargin: "0px"
     };
 
+	// IntersectionObserver for elements appearingonscroll
     const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
@@ -81,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, appearOptions);
 
+	// Observing elements to be faded in
     faders.forEach(fader => {
         appearOnScroll.observe(fader);
     });
