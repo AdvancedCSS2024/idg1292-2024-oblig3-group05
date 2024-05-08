@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oi&display=swap');
 // Color variables:
 
 // sky gradient nice
@@ -83,7 +84,184 @@ p {
     background: linear-gradient(0deg, $mintGray 0%, $co2Gray 100%);
 }
 
-// Put falke kode her:
+.niceweather {
+  background: linear-gradient(0deg, #daf1f9 0%, #86bde6 100%);
+}
+
+.beach-wave--nasty, .beach-wave {
+  position: absolute;
+  bottom: 0;
+  max-height: 100%;
+}
+
+.beach-wave {
+  display: none;
+}
+
+.cleanwaves {
+  display: block!important;
+}
+
+.nastywaves {
+  display: none;
+}
+
+.cloud--large--nasty {
+  position: absolute;
+  top: 7%;
+  width: 50%;
+}
+
+.cloud--small--nasty {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 15%;
+}
+
+.island {
+  position: absolute;
+  right: 0;
+  max-width: 30%;
+  bottom: 0;
+}
+
+.title-wrapper {
+position: absolute;
+top: 150px;
+left: 5%;
+}
+
+h1 {
+  font-family: "Oi", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: #86bde6;
+}
+
+.title-wrapper {
+  max-width: max-content;
+}
+
+#bubbleOne, #bubbleTwo, #bubbleThree, #bubbleFour, #bubbleFive, 
+#bubbleSix, #bubbleSeven, #bubbleEight, #bubbleNine, #bubbleTen,
+#bubbleEleven, #bubbleTwelve, #bubbleThirteen, #bubbleFourteen, #bubbleFifteen {
+  position: absolute;
+}
+
+#bubbleOne {
+  width: 1rem;
+  top: 70%; 
+  left: 7%; 
+}
+
+#bubbleTwo {
+  width: 0.8rem;
+  top: 80%; 
+  left: 1%; 
+  animation-duration: 8s!important;
+}
+
+#bubbleThree {
+  width: 1.2rem;
+  top: 70%; 
+  left: 14%; 
+  animation-duration: 9s!important;
+}
+
+#bubbleFour {
+  width: 1.5rem;
+  top: 70%; 
+  left: 21%; 
+  animation-duration: 7s!important;
+}
+
+#bubbleFive {
+  width: 1rem;
+  top: 70%; 
+  left: 26%; 
+  animation-duration: 3s!important;
+}
+
+#bubbleSix {
+  width: 1.0rem;
+  top: 75%; 
+  left: 33%; 
+  animation-duration: 8s!important;
+}
+
+#bubbleSeven {
+  width: 1.4rem;
+  top: 70%; 
+  left: 41%; 
+  animation-duration: 10s!important;
+}
+
+#bubbleEight {
+  width: 1.2rem;
+  top: 70%; 
+  left: 50%; 
+  animation-duration: 4s!important;
+}
+
+#bubbleNine {
+  width: 1.0rem;
+  top: 70%; 
+  left: 55%; 
+  animation-duration: 8s!important;
+}
+
+#bubbleTen {
+  width: 1.3rem;
+  top: 70%; 
+  left: 60%; 
+}
+
+#bubbleEleven {
+  width: 1.5rem;
+  top: 70%; 
+  left: 69%; 
+  animation-duration: 4s!important;
+}
+
+#bubbleTwelve {
+  width: 1.2rem;
+  top: 70%; 
+  left: 74%; 
+  animation-duration: 9s!important;
+}
+
+#bubbleThirteen {
+  width: 1rem;
+  top: 70%; 
+  left: 80%;
+}
+
+#bubbleFourteen {
+  width: 0.7rem;
+  top: 70%; 
+  left: 88%; 
+  animation-duration: 4s!important;
+}
+
+#bubbleFifteen {
+  width: 1rem;
+  top: 70%; 
+  left: 95%; 
+  animation-duration: 3s!important;
+}
+
+
+.bubbles {
+  animation: bubbly 5s ease-in-out infinite;
+}
+
+@keyframes bubbly {
+  100% {
+    transform: translateY(-90px);
+  }
+}
 
 // End of Section 1
 
@@ -98,6 +276,10 @@ p {
         bottom: 0;
         z-index: -1;
     }
+}
+
+.section2waves {
+  display: none;
 }
 
 .section2__cont {
@@ -285,6 +467,10 @@ p {
     z-index: 0;
 }
 
+.unpolluted {
+  background: linear-gradient(0deg, #3a4ca0 0%, #47c4e0 50%, #cbeaf4 100%);
+}
+
 // Section 4
 .trash-floor {
     display: flex;
@@ -387,22 +573,37 @@ article > a {
     bottom: 0;
 }
 
-.corals {
-    display: flex;
-    
-    &--right, &--left {
-        bottom: 5vw;
-        width: 20vw;
-        position: absolute;
-    }
+.coral {
+  display: flex;
+  
+  &--right, &--right--nasty, &--left, &--left--nasty {
+      bottom: 5vw;
+      width: 20vw  ;
+      position: absolute;
+      z-index: 3;
+  }
 
-    &--right {
-        right: 0px;
-    }
-
-    &--left {
-        left: 0px;
-    }
+  &--right, &--right--nasty {
+      right: 0px;
+  }
+  
+  &--left, &--left--nasty {
+      left: 0px;
+  }
 }
 
+.coral--left--nasty,
+.coral--right--nasty {
+  display: visible;
+}
+
+.nastyCorals {
+  display: none!important;
+}
+
+.button--cleanup {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+}
 // End of Section 4

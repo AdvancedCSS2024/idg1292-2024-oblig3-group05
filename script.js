@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		rootMargin: "10px"
 	};
 
-
     const observer = new IntersectionObserver(function
 	(entries, observer) {
         entries.forEach(entry => {
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
         });
     }, options);
-  
+
 	sections.forEach(section => {
 		observer.observe(section);
 	})
@@ -31,7 +30,41 @@ document.addEventListener('DOMContentLoaded', function() {
 	const appearOptions = {
 		threshold: 0.5,
 		rootMargin: "0px"
-	};
+
+ // Get the button element
+ const cleanupButton = document.getElementById('cleanocean');
+
+ // Add a click event listener to the button
+ cleanupButton.addEventListener('click', function() {
+   // Get the element with class clouds__small--one
+   
+   const backGrounds = document.querySelector('.section--1');
+   const oceanNasty = document.querySelector('.beach-wave--nasty');
+   const oceanClean = document.querySelector('.beach-wave');
+   const sectionTwoNasty = document.querySelector('.wave-nasty');
+   const sectionTwoClean = document.querySelector('.section2waves');
+   const coralLeftNasty = document.querySelector('.coral--left--nasty');
+   const coralRightNasty = document.querySelector('.coral--right--nasty');
+   const coralLeftClean = document.querySelector('.coral--left');
+   const coralRightClean = document.querySelector('.coral--right');
+   const waterGradient = document.querySelector('.underwater-gradient');
+
+   // Add the class 'clean' to the element
+   backGrounds.classList.add("niceweather");
+   oceanNasty.classList.add("nastywaves");
+   oceanClean.classList.add("cleanwaves");
+   sectionTwoNasty.classList.add("nastywaves");
+   sectionTwoClean.classList.add("cleanwaves");
+   coralLeftNasty.classList.add("nastyCorals");
+   coralRightNasty.classList.add("nastyCorals");
+   coralLeftClean.classList.remove("nastyCorals");
+   coralRightClean.classList.remove("nastyCorals");
+   waterGradient.classList.add('unpolluted');
+ });
+                          
+const appearOptions = {
+		threshold: 0.5,
+		rootMargin: "0px"
 
 	const appearOnScroll = new IntersectionObserver(function (
 		entries,
@@ -52,3 +85,4 @@ document.addEventListener('DOMContentLoaded', function() {
 		appearOnScroll.observe(fader);
 	});
 });
+
