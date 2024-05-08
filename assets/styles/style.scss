@@ -43,6 +43,7 @@ h2 {
 
 p {
     font-size: 0.5rem;
+    max-width: 70ch;
 }
 
 .goal {
@@ -535,7 +536,7 @@ h1 {
     animation: rotateCounterClockwise 4s infinite ease-in-out;
   }
 
-article > a {
+p > a {
     color: #fcbf5b;
     text-decoration: none;
     cursor: pointer;
@@ -549,15 +550,13 @@ article > a {
     &--headline{
         position: absolute;
         top: 15%;
-        left: 41%;
+        left: 35%;
         color: whitesmoke;
     }   
 
     &--info{
         position: absolute;
-        top: 20%;
-        max-width: 40ch;
-        padding: 5px;
+        top: 21%;
         color: whitesmoke;
     }
 }
